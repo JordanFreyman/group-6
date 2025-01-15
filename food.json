@@ -1,0 +1,106 @@
+{
+    "Main Dish": [
+      {
+        "name": "Steak",
+        "price": 15,
+        "description": "Oh boy!!! A big ol' juicy MMMM!!!"
+      },
+      {
+        "name": "Spaghetti",
+        "price": 6,
+        "description": "I cook-a the pasta"
+      },
+      {
+        "name": "Lobster",
+        "price": 9,
+        "description": "Get your bib out for this one"
+      },
+      {
+        "name": "Italian Wedding Soup",
+        "price": 6,
+        "description": "Mazel tov."
+      },
+      {
+        "name": "Pizza",
+        "price": 4,
+        "description": "A steamy, fresh slice of THIN-CRUSTED pizza. The most superior type of crust. Only the best for you."
+      },
+      {
+        "name": "Udon",
+        "price": 5,
+        "description": "Udon't even wanna imagine a life without this."
+      },
+      {
+        "name": "Roasted Turkey",
+        "price": 8,
+        "description": "Never be afraid of a little food coma."
+      }
+    ],
+    "Side Dish": [
+      {
+        "name": "Garlic Bread",
+        "price": 3,
+        "description": "Olive Garden wishes they could top this."
+      },
+      {
+        "name": "French Fries",
+        "price": 3,
+        "description": "Wouldn't it make more sense for these to be called 'crisps' in British? Y'know cause they're so crispy"
+      },
+      {
+        "name": "Whole Tomato",
+        "price": 1,
+        "description": "Apple if you're not a coward."
+      },
+      {
+        "name": "Beef Jerky",
+        "price": 3,
+        "description": "This meat will cure you in one bite."
+      },
+      {
+        "name": "Trail Mix",
+        "price": 3,
+        "description": "Don't keep your eyes off of these for even a second with me around 'cause those chocolate candies will disappear if you do."
+      }
+    ],
+    "Dessert": [
+      {
+        "name": "Chocolate Cake",
+        "price": 4,
+        "description": "Rich and moisty chocolate cake with creamy frosting."
+      },
+      {
+        "name": "Cupcake",
+        "price": 1,
+        "description": "Oh, won't you be just a little bad and indulge?"
+      },
+      {
+        "name": "Fairy Bread",
+        "price": 2,
+        "description": "Bread of the fae. Definitely NOT just bread with butter and sprinkles."
+      }
+    ],
+    "Beverage": [
+      {
+        "name": "Orange Juice",
+        "price": 2,
+        "description": "Doesn't mix well with freshly-brushed teeth, but delicious any other time!"
+      },
+      {
+        "name": "Milk",
+        "price": 1,
+        "description": "Keep away from the legendary Puss in Boots at all times."
+      },
+      {
+        "name": "Coffee",
+        "price": 2,
+        "description": "Breakfast and the morning newspaper awaits."
+      },
+      {
+        "name": "Boba Tea",
+        "price": 4,
+        "description": "Whoever gets their hands on this and loves it is really fruity..."
+      }
+    ]
+  }
+  
