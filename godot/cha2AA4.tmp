@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6l76o2yaghek"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_bl88u"]
+[ext_resource type="Texture2D" path="res://Art assets/CompositeSpriteSheets/Body.png" id="2_m6tql"]
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_bl88u")
+
+[node name="CompositeSprites" type="Node2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(435.5, 371.5)
+scale = Vector2(8.71875, 8.71875)
+texture = ExtResource("2_m6tql")
+
+[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
+
+[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
+
+[node name="Nose" type="Sprite2D" parent="CompositeSprites"]
+
+[node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
