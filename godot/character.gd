@@ -1,5 +1,7 @@
 extends Node2D
 
+signal menu_changed(menu_name)
+
 @onready var bodySprite = $CompositeSprites/Body
 @onready var eyesSprite = $CompositeSprites/Eyes
 @onready var hairSprite = $CompositeSprites/Hair
@@ -12,6 +14,8 @@ var currHair: int = 0
 var currNose: int = 0
 var currMouth: int = 0
 
+@export var menu_name = "menu"
+
 func _ready():
 	bodySprite.texture = $CompositeSprites.body_spritesheet[currBody]
 	eyesSprite.texture = $CompositeSprites.eyes_spritesheet[currEyes]
@@ -21,7 +25,6 @@ func _ready():
 
 func transfer_data_between_scenes(old_scene, new_scene):
 	new_scene.currVal = old_scene.currVal
-	#create scene object?
 
 func _on_change_eyes_pressed() -> void:
 	currEyes = (currEyes + 1) % $CompositeSprites.eyes_spritesheet.size()
@@ -29,7 +32,8 @@ func _on_change_eyes_pressed() -> void:
 
 
 func _on_view_eyes_pressed() -> void:
-	get_tree().change_scene_to_file("res://view_eyes.tscn")
+	#get_tree().change_scene_to_file("res://view_eyes.tscn")
+	emit_signal("menu_changed", menu_name)
 
 
 func _on_eyes_1_pressed() -> void:
@@ -45,3 +49,7 @@ func _on_eyes_2_pressed() -> void:
 func _on_eyes_3_pressed() -> void:
 	currEyes = 2
 	eyesSprite.texture = $CompositeSprites.eyes_spritesheet[2]
+
+
+func _on_back_pressed() -> void:
+	emit_signal("menu_changed", menu_name)

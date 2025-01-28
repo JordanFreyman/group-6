@@ -12,6 +12,7 @@
 position = Vector2(-200, -350)
 scale = Vector2(2, 2)
 script = ExtResource("1_bl88u")
+menu_name = "character"
 
 [node name="CompositeSprites" type="Node2D" parent="."]
 script = ExtResource("2_mab3r")
