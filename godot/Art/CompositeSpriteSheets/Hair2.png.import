@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh11bdn7qliyc"
-path="res://.godot/imported/Hair2.png-f287795b71bfed960284f91a28a11dc3.ctex"
+path="res://.godot/imported/Hair2.png-45d69ed89e4fdef1d33a002cf045877c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Updated-Art/Hair2.png"
-dest_files=["res://.godot/imported/Hair2.png-f287795b71bfed960284f91a28a11dc3.ctex"]
+source_file="res://Art/CompositeSpriteSheets/Hair2.png"
+dest_files=["res://.godot/imported/Hair2.png-45d69ed89e4fdef1d33a002cf045877c.ctex"]
 
 [params]
 

@@ -1,15 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbjfib4n5otf7"]
+[gd_scene load_steps=12 format=3 uid="uid://de4ytkdbgis3e"]
 
-[ext_resource type="Script" path="res://character.gd" id="1_0gwam"]
-[ext_resource type="Script" path="res://composite_sprites.gd" id="2_v3yrg"]
-[ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="3_hlmvs"]
-[ext_resource type="Texture2D" uid="uid://ishq5b0d1fp4" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_4y1v7"]
-[ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="5_titg8"]
-[ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="6_jtyji"]
-[ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_xte7u"]
-[ext_resource type="Theme" uid="uid://dwy6h3pp5fuit" path="res://Art/Default_Button.tres" id="8_i03k6"]
-[ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_rsf0a"]
-[ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_2c87r"]
+[ext_resource type="Script" path="res://character.gd" id="1_nf53w"]
+[ext_resource type="Script" path="res://composite_sprites.gd" id="2_v5lp7"]
+[ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="3_avk37"]
+[ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="5_x4i2c"]
+[ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="6_g07xo"]
+[ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_qc53t"]
+[ext_resource type="Theme" uid="uid://dwy6h3pp5fuit" path="res://Art/Default_Button.tres" id="8_fdfdb"]
+[ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_kyejb"]
+[ext_resource type="Texture2D" uid="uid://ishq5b0d1fp4" path="res://Art/CompositeSpriteSheets/Head1.png" id="9_i4eqi"]
+[ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_jxt1f"]
 
 [sub_resource type="GDScript" id="GDScript_4m84k"]
 script/source = "extends Control
@@ -25,46 +25,46 @@ func _on_back_pressed() -> void:
 [node name="Character" type="Node2D"]
 position = Vector2(-200, -350)
 scale = Vector2(2, 2)
-script = ExtResource("1_0gwam")
+script = ExtResource("1_nf53w")
 menu_name = "eyes"
 
 [node name="CompositeSprites" type="Node2D" parent="."]
-script = ExtResource("2_v3yrg")
+script = ExtResource("2_v5lp7")
 
 [node name="Body" type="Sprite2D" parent="CompositeSprites"]
 position = Vector2(435.5, 371.5)
 scale = Vector2(8.71875, 8.71875)
-texture = ExtResource("3_hlmvs")
+texture = ExtResource("3_avk37")
 
 [node name="Head" type="Sprite2D" parent="CompositeSprites"]
 position = Vector2(463.5, 308.5)
 scale = Vector2(2, 2)
-texture = ExtResource("4_4y1v7")
+texture = ExtResource("9_i4eqi")
 
 [node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
 position = Vector2(442.745, 325.43)
 scale = Vector2(2, 2)
-texture = ExtResource("5_titg8")
+texture = ExtResource("5_x4i2c")
 
 [node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
 position = Vector2(450.535, 320.85)
 scale = Vector2(2.195, 2.195)
-texture = ExtResource("6_jtyji")
+texture = ExtResource("6_g07xo")
 
 [node name="Nose" type="Sprite2D" parent="CompositeSprites"]
 position = Vector2(451.255, 347.31)
 scale = Vector2(2, 2)
-texture = ExtResource("7_xte7u")
+texture = ExtResource("7_qc53t")
 
 [node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
 position = Vector2(442.885, 371.005)
 scale = Vector2(2, 2)
-texture = ExtResource("8_rsf0a")
+texture = ExtResource("8_kyejb")
 
 [node name="Hair" type="Sprite2D" parent="CompositeSprites"]
 position = Vector2(439.64, 346.445)
 scale = Vector2(2, 2)
-texture = ExtResource("9_2c87r")
+texture = ExtResource("9_jxt1f")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
@@ -85,11 +85,11 @@ offset_top = 70.04
 offset_right = -96.2001
 offset_bottom = 160.88
 
-[node name="Body1" type="Button" parent="Menu/GridContainer"]
+[node name="Head1" type="Button" parent="Menu/GridContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme = ExtResource("8_i03k6")
-icon = ExtResource("3_hlmvs")
+theme = ExtResource("8_fdfdb")
+icon = ExtResource("9_i4eqi")
 icon_alignment = 1
 expand_icon = true
 
@@ -102,5 +102,5 @@ offset_bottom = 574.0
 text = "Back
 "
 
-[connection signal="pressed" from="Menu/GridContainer/Body1" to="." method="_on_body_selected" binds= [0]]
+[connection signal="pressed" from="Menu/GridContainer/Head1" to="." method="_on_head_selected" binds= [0]]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]

@@ -2,14 +2,18 @@ extends Node2D
 
 signal menu_changed(menu_name)
 
+@onready var headSprite = $CompositeSprites/Head
 @onready var bodySprite = $CompositeSprites/Body
+@onready var eyebrowsSprite = $CompositeSprites/Eyebrows
 @onready var eyesSprite = $CompositeSprites/Eyes
 @onready var hairSprite = $CompositeSprites/Hair
 @onready var noseSprite = $CompositeSprites/Nose
 @onready var mouthSprite = $CompositeSprites/Mouth
 
 var menu_params := {
+	"currHead": 0,
 	"currBody": 0,
+	"currEyebrows": 0,
 	"currEyes": 0,
 	"currHair": 0,
 	"currNose": 0,
@@ -27,7 +31,9 @@ func _ready():
 
 # Function to update all sprite textures based on menu_params
 func update_sprites():
+	headSprite.texture = $CompositeSprites.head_spritesheet[menu_params["currHead"]]
 	bodySprite.texture = $CompositeSprites.body_spritesheet[menu_params["currBody"]]
+	eyebrowsSprite.texture = $CompositeSprites.eyebrows_spritesheet[menu_params["currEyebrows"]]
 	eyesSprite.texture = $CompositeSprites.eyes_spritesheet[menu_params["currEyes"]]
 	hairSprite.texture = $CompositeSprites.hair_spritesheet[menu_params["currHair"]]
 	noseSprite.texture = $CompositeSprites.nose_spritesheet[menu_params["currNose"]]
@@ -37,8 +43,12 @@ func update_sprites():
 func set_feature(feature: String, index: int):
 	menu_params[feature] = index
 	match feature:
+		"currHead":
+			headSprite.texture = $CompositeSprites.head_spritesheet[index]
 		"currBody":
 			bodySprite.texture = $CompositeSprites.body_spritesheet[index]
+		"currEyebrows":
+			eyebrowsSprite.texture = $CompositeSprites.eyebrows_spritesheet[index]
 		"currEyes":
 			eyesSprite.texture = $CompositeSprites.eyes_spritesheet[index]
 		"currHair":
@@ -48,8 +58,17 @@ func set_feature(feature: String, index: int):
 		"currMouth":
 			mouthSprite.texture = $CompositeSprites.mouth_spritesheet[index]
 
+
+func _on_view_head_pressed():
+	switch_to = "head"
+	emit_signal("menu_changed", menu_name)
+
 func _on_view_body_pressed():
 	switch_to = "body"
+	emit_signal("menu_changed", menu_name)
+
+func _on_view_eyebrows_pressed():
+	switch_to = "eyebrows"
 	emit_signal("menu_changed", menu_name)
 
 func _on_view_eyes_pressed():
@@ -72,8 +91,14 @@ func _on_back_pressed():
 	switch_to = "character"
 	emit_signal("menu_changed", menu_name)
 
+func _on_head_selected(index: int):
+	set_feature("currHead", index)
+
 func _on_body_selected(index: int):
 	set_feature("currBody", index)
+
+func _on_eyebrows_selected(index: int):
+	set_feature("currEyebrows", index)
 
 # Eyes selection function (applies to all eye buttons)
 func _on_eyes_selected(index: int):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k6eaaouf4uj8"
-path="res://.godot/imported/Mouth1.png-9b45bec25230e5434c23a65f0e16cce1.ctex"
+uid="uid://dwn5pgjum2eq7"
+path="res://.godot/imported/Hair1.png-c29e23be32abedd0285064f7b0a50cdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Updated-Art/Mouth1.png"
-dest_files=["res://.godot/imported/Mouth1.png-9b45bec25230e5434c23a65f0e16cce1.ctex"]
+source_file="res://Art/CompositeSpriteSheets/Hair1.png"
+dest_files=["res://.godot/imported/Hair1.png-c29e23be32abedd0285064f7b0a50cdb.ctex"]
 
 [params]
 

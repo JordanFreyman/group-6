@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x6kx7rftbrqh"
-path="res://.godot/imported/Eyebrows2.png-ebfcbd007f553c98d96b0d1d23d8de85.ctex"
+uid="uid://c3l18r0xcr67m"
+path="res://.godot/imported/Eyebrows1.png-9718660f5141a6b3212beb271ff84bb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Updated-Art/Eyebrows2.png"
-dest_files=["res://.godot/imported/Eyebrows2.png-ebfcbd007f553c98d96b0d1d23d8de85.ctex"]
+source_file="res://Art/CompositeSpriteSheets/Eyebrows1.png"
+dest_files=["res://.godot/imported/Eyebrows1.png-9718660f5141a6b3212beb271ff84bb7.ctex"]
 
 [params]
 

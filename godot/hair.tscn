@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://dw0kknxukuqt1"]
+[gd_scene load_steps=13 format=3 uid="uid://dw0kknxukuqt1"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_oku1j"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_bk3uf"]
 [ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="3_pinna"]
-[ext_resource type="Texture2D" uid="uid://d6xkd73bmsy0" path="res://Art/CompositeSpriteSheets/Eyes.png" id="4_3j2u3"]
-[ext_resource type="Texture2D" uid="uid://bvkyu8w4mrk2t" path="res://Art/CompositeSpriteSheets/Hair.png" id="5_k43gu"]
-[ext_resource type="Texture2D" uid="uid://bcpve12owsrvb" path="res://Art/CompositeSpriteSheets/Nose.png" id="6_c7x44"]
-[ext_resource type="Texture2D" uid="uid://d37m3qd5d8xm8" path="res://Art/CompositeSpriteSheets/Mouth.png" id="7_im5rf"]
+[ext_resource type="Texture2D" uid="uid://ishq5b0d1fp4" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_dyxml"]
+[ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="5_wrok0"]
+[ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="6_8gw2i"]
+[ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_yiga6"]
+[ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_2j6j2"]
 [ext_resource type="Theme" uid="uid://dwy6h3pp5fuit" path="res://Art/Default_Button.tres" id="8_m4jse"]
-[ext_resource type="Texture2D" uid="uid://bb2gvdorrutm6" path="res://Art/CompositeSpriteSheets/Eyes2.png" id="9_7e54y"]
-[ext_resource type="Texture2D" uid="uid://d4lohwbotrexp" path="res://Art/CompositeSpriteSheets/Eyes3.png" id="10_ofbub"]
+[ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_3yd8x"]
+[ext_resource type="Texture2D" uid="uid://dh11bdn7qliyc" path="res://Art/CompositeSpriteSheets/Hair2.png" id="10_i54w4"]
 
 [sub_resource type="GDScript" id="GDScript_4m84k"]
 script/source = "extends Control
@@ -36,25 +37,35 @@ position = Vector2(435.5, 371.5)
 scale = Vector2(8.71875, 8.71875)
 texture = ExtResource("3_pinna")
 
-[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(435.5, 371.5)
-scale = Vector2(8.71875, 8.71875)
-texture = ExtResource("4_3j2u3")
+[node name="Head" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(463.5, 308.5)
+scale = Vector2(2, 2)
+texture = ExtResource("4_dyxml")
 
-[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(435.5, 371.5)
-scale = Vector2(8.71875, 8.71875)
-texture = ExtResource("5_k43gu")
+[node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(442.745, 325.43)
+scale = Vector2(2, 2)
+texture = ExtResource("5_wrok0")
+
+[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(450.535, 320.85)
+scale = Vector2(2.195, 2.195)
+texture = ExtResource("6_8gw2i")
 
 [node name="Nose" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(435.5, 371.5)
-scale = Vector2(8.71875, 8.71875)
-texture = ExtResource("6_c7x44")
+position = Vector2(451.255, 347.31)
+scale = Vector2(2, 2)
+texture = ExtResource("7_yiga6")
 
 [node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(435.5, 371.5)
-scale = Vector2(8.71875, 8.71875)
-texture = ExtResource("7_im5rf")
+position = Vector2(442.885, 371.005)
+scale = Vector2(2, 2)
+texture = ExtResource("8_2j6j2")
+
+[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(439.64, 346.445)
+scale = Vector2(2, 2)
+texture = ExtResource("9_3yd8x")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
@@ -79,7 +90,7 @@ offset_bottom = 160.88
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme = ExtResource("8_m4jse")
-icon = ExtResource("5_k43gu")
+icon = ExtResource("9_3yd8x")
 icon_alignment = 1
 expand_icon = true
 
@@ -87,15 +98,7 @@ expand_icon = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme = ExtResource("8_m4jse")
-icon = ExtResource("9_7e54y")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Hair3" type="Button" parent="Menu/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme = ExtResource("8_m4jse")
-icon = ExtResource("10_ofbub")
+icon = ExtResource("10_i54w4")
 icon_alignment = 1
 expand_icon = true
 
@@ -110,5 +113,4 @@ text = "Back
 
 [connection signal="pressed" from="Menu/GridContainer/Hair1" to="." method="_on_hair_selected" binds= [0]]
 [connection signal="pressed" from="Menu/GridContainer/Hair2" to="." method="_on_hair_selected" binds= [1]]
-[connection signal="pressed" from="Menu/GridContainer/Hair3" to="." method="_on_hair_selected" binds= [2]]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]

@@ -1,14 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsh61kk3siuwr"]
+[gd_scene load_steps=15 format=3 uid="uid://dsh61kk3siuwr"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_j4s0o"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_e2og0"]
 [ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="3_813kr"]
+[ext_resource type="Texture2D" uid="uid://ishq5b0d1fp4" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_p6et4"]
 [ext_resource type="Texture2D" uid="uid://d6xkd73bmsy0" path="res://Art/CompositeSpriteSheets/Eyes.png" id="4_vcxdf"]
-[ext_resource type="Texture2D" uid="uid://bvkyu8w4mrk2t" path="res://Art/CompositeSpriteSheets/Hair.png" id="5_e817t"]
-[ext_resource type="Texture2D" uid="uid://bcpve12owsrvb" path="res://Art/CompositeSpriteSheets/Nose.png" id="6_0flsa"]
-[ext_resource type="Texture2D" uid="uid://d37m3qd5d8xm8" path="res://Art/CompositeSpriteSheets/Mouth.png" id="7_jmdw6"]
+[ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="5_eatjt"]
+[ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="6_rfdrx"]
+[ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_chsr7"]
+[ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_a3rqc"]
 [ext_resource type="Theme" uid="uid://dwy6h3pp5fuit" path="res://Art/Default_Button.tres" id="8_qdvde"]
-[ext_resource type="Texture2D" uid="uid://bb2gvdorrutm6" path="res://Art/CompositeSpriteSheets/Eyes2.png" id="9_0dgvr"]
+[ext_resource type="Texture2D" uid="uid://cq8kkurfsrj12" path="res://Art/CompositeSpriteSheets/Eyes2.png" id="9_0dgvr"]
+[ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_n6mfw"]
 [ext_resource type="Texture2D" uid="uid://d4lohwbotrexp" path="res://Art/CompositeSpriteSheets/Eyes3.png" id="10_wxy4f"]
 
 [sub_resource type="GDScript" id="GDScript_4m84k"]
@@ -36,25 +39,35 @@ position = Vector2(435.5, 371.5)
 scale = Vector2(8.71875, 8.71875)
 texture = ExtResource("3_813kr")
 
-[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(435.5, 371.5)
-scale = Vector2(8.71875, 8.71875)
-texture = ExtResource("4_vcxdf")
+[node name="Head" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(463.5, 308.5)
+scale = Vector2(2, 2)
+texture = ExtResource("4_p6et4")
 
-[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(435.5, 371.5)
-scale = Vector2(8.71875, 8.71875)
-texture = ExtResource("5_e817t")
+[node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(442.745, 325.43)
+scale = Vector2(2, 2)
+texture = ExtResource("5_eatjt")
+
+[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(450.535, 320.85)
+scale = Vector2(2.195, 2.195)
+texture = ExtResource("6_rfdrx")
 
 [node name="Nose" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(435.5, 371.5)
-scale = Vector2(8.71875, 8.71875)
-texture = ExtResource("6_0flsa")
+position = Vector2(451.255, 347.31)
+scale = Vector2(2, 2)
+texture = ExtResource("7_chsr7")
 
 [node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(435.5, 371.5)
-scale = Vector2(8.71875, 8.71875)
-texture = ExtResource("7_jmdw6")
+position = Vector2(442.885, 371.005)
+scale = Vector2(2, 2)
+texture = ExtResource("8_a3rqc")
+
+[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(439.64, 346.445)
+scale = Vector2(2, 2)
+texture = ExtResource("9_n6mfw")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
