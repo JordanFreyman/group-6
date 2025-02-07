@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://ottm20cs0wel"]
+
+[ext_resource type="Texture2D" uid="uid://leyfg5wggtxk" path="res://DemoSprites/demoMap.jpg" id="1_wsx3c"]
+[ext_resource type="Texture2D" uid="uid://bqi5xycw7ukoa" path="res://icon.svg" id="2_k8t8a"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, 5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(958, 535)
+
+[node name="DemoMap" type="Sprite2D" parent="."]
+position = Vector2(967, 539)
+scale = Vector2(1.87891, 1.40495)
+texture = ExtResource("1_wsx3c")
+
+[node name="pointsCanvas" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="pointsCanvas"]
+offset_left = 1646.0
+offset_top = 940.0
+offset_right = 1903.0
+offset_bottom = 1068.0
+
+[node name="GridContainer" type="GridContainer" parent="pointsCanvas/PanelContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="pointsCanvas/PanelContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_k8t8a")
+
+[node name="name" type="Label" parent="pointsCanvas/PanelContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Godot Points"
+
+[node name="points" type="Label" parent="pointsCanvas/PanelContainer/GridContainer/name"]
+layout_mode = 2
+offset_left = 15.0
+offset_top = 38.0
+offset_right = 122.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 18
+text = "500"
+
+[node name="ButtonCanvas" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="ButtonCanvas"]
+offset_left = 471.0
+offset_top = 979.0
+offset_right = 874.0
+offset_bottom = 1070.0
+theme_override_font_sizes/font_size = 50
+text = "Start Game
+"
