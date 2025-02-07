@@ -15,38 +15,53 @@ var menu_params := {
 	"currNose": 0,
 	"currMouth": 0
 }
+
 @export var menu_name = "menu"
+@export var switch_to: String
 
 func load_params(new_menu_params: Dictionary):
 	menu_params = new_menu_params
 
 func _ready():
+	update_sprites()
+
+# Function to update all sprite textures based on menu_params
+func update_sprites():
 	bodySprite.texture = $CompositeSprites.body_spritesheet[menu_params["currBody"]]
 	eyesSprite.texture = $CompositeSprites.eyes_spritesheet[menu_params["currEyes"]]
 	hairSprite.texture = $CompositeSprites.hair_spritesheet[menu_params["currHair"]]
 	noseSprite.texture = $CompositeSprites.nose_spritesheet[menu_params["currNose"]]
 	mouthSprite.texture = $CompositeSprites.mouth_spritesheet[menu_params["currMouth"]]
 
+# Generic function for setting a sprite index
+func set_feature(feature: String, index: int):
+	menu_params[feature] = index
+	match feature:
+		"currEyes":
+			eyesSprite.texture = $CompositeSprites.eyes_spritesheet[index]
+		"currHair":
+			hairSprite.texture = $CompositeSprites.hair_spritesheet[index]
+		"currNose":
+			noseSprite.texture = $CompositeSprites.nose_spritesheet[index]
+		"currMouth":
+			mouthSprite.texture = $CompositeSprites.mouth_spritesheet[index]
 
-func _on_view_eyes_pressed() -> void:
-	#get_tree().change_scene_to_file("res://view_eyes.tscn")
+func _on_view_eyes_pressed():
+	switch_to = "eyes"
 	emit_signal("menu_changed", menu_name)
 
-
-func _on_eyes_1_pressed() -> void:
-	menu_params["currEyes"] = 0
-	eyesSprite.texture = $CompositeSprites.eyes_spritesheet[0]
-
-
-func _on_eyes_2_pressed() -> void:
-	menu_params["currEyes"] = 1
-	eyesSprite.texture = $CompositeSprites.eyes_spritesheet[1]
-
-
-func _on_eyes_3_pressed() -> void:
-	menu_params["currEyes"] = 2
-	eyesSprite.texture = $CompositeSprites.eyes_spritesheet[2]
-
-
-func _on_back_pressed() -> void:
+func _on_view_hair_pressed():
+	switch_to = "hair"
 	emit_signal("menu_changed", menu_name)
+
+func _on_back_pressed():
+	switch_to = "character"
+	emit_signal("menu_changed", menu_name)
+
+# Hair selection function (applies to all hair buttons)
+func _on_hair_selected(index: int):
+	set_feature("currHair", index)
+
+# Eyes selection function (applies to all eye buttons)
+func _on_eyes_selected(index: int):
+	set_feature("currEyes", index)

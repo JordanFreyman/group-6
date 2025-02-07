@@ -108,7 +108,7 @@ offset_bottom = 574.0
 text = "Back
 "
 
-[connection signal="pressed" from="Menu/GridContainer/Eyes1" to="." method="_on_eyes_1_pressed"]
-[connection signal="pressed" from="Menu/GridContainer/Eyes2" to="." method="_on_eyes_2_pressed"]
-[connection signal="pressed" from="Menu/GridContainer/Eyes3" to="." method="_on_eyes_3_pressed"]
+[connection signal="pressed" from="Menu/GridContainer/Eyes1" to="." method="_on_eyes_selected" binds= [0]]
+[connection signal="pressed" from="Menu/GridContainer/Eyes2" to="." method="_on_eyes_selected" binds= [1]]
+[connection signal="pressed" from="Menu/GridContainer/Eyes3" to="." method="_on_eyes_selected" binds= [2]]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]

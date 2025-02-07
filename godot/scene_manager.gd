@@ -7,14 +7,16 @@ func _ready() -> void:
 	current_menu.connect("menu_changed", handle_menu_changed)
 
 func handle_menu_changed(current_menu_name: String):
-	var next_menu_name : String
-	match current_menu_name:
-		"character":
-			next_menu_name = "eyes"
-		"eyes":
-			next_menu_name = "character"
-		_:
-			return
+	#var next_menu_name : String
+	print(current_menu.switch_to)
+	#match current_menu_name:
+		#"character":
+			#next_menu_name = "eyes"
+		#"eyes":
+			#next_menu_name = "character"
+		#_:
+			#return
+	var next_menu_name = current_menu.switch_to
 			
 	var temp = load("res://"+next_menu_name+".tscn")
 	next_menu = temp.instantiate()
