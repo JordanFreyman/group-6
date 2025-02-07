@@ -68,8 +68,7 @@ text = "Eyes (functional)"
 
 [node name="ViewHair" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Hair
-"
+text = "Hair (functional?)"
 
 [node name="ViewNose" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -79,8 +78,8 @@ text = "Nose"
 layout_mode = 2
 text = "Mouth"
 
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewBody" to="." method="_on_view_eyes_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewBody" to="." method="_on_view_body_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewEyes" to="." method="_on_view_eyes_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewHair" to="." method="_on_view_hair_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewNose" to="." method="_on_view_eyes_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewMouth" to="." method="_on_view_eyes_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewNose" to="." method="_on_view_nose_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewMouth" to="." method="_on_view_mouth_pressed"]

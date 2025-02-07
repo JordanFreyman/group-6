@@ -79,7 +79,7 @@ offset_bottom = 160.88
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme = ExtResource("8_m4jse")
-icon = ExtResource("4_3j2u3")
+icon = ExtResource("5_k43gu")
 icon_alignment = 1
 expand_icon = true
 
@@ -108,7 +108,7 @@ offset_bottom = 574.0
 text = "Back
 "
 
-[connection signal="pressed" from="Menu/GridContainer/Hair1" to="." method="_on_hair_1_pressed"]
-[connection signal="pressed" from="Menu/GridContainer/Hair2" to="." method="_on_hair_2_pressed"]
-[connection signal="pressed" from="Menu/GridContainer/Hair3" to="." method="_on_hair_3_pressed"]
+[connection signal="pressed" from="Menu/GridContainer/Hair1" to="." method="_on_hair_selected" binds= [0]]
+[connection signal="pressed" from="Menu/GridContainer/Hair2" to="." method="_on_hair_selected" binds= [1]]
+[connection signal="pressed" from="Menu/GridContainer/Hair3" to="." method="_on_hair_selected" binds= [2]]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbjfib4n5otf7"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_0gwam"]
+[ext_resource type="Script" path="res://composite_sprites.gd" id="2_v3yrg"]
+[ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="3_hlmvs"]
+[ext_resource type="Texture2D" uid="uid://d6xkd73bmsy0" path="res://Art/CompositeSpriteSheets/Eyes.png" id="4_akak7"]
+[ext_resource type="Texture2D" uid="uid://bvkyu8w4mrk2t" path="res://Art/CompositeSpriteSheets/Hair.png" id="5_bdy7q"]
+[ext_resource type="Texture2D" uid="uid://bcpve12owsrvb" path="res://Art/CompositeSpriteSheets/Nose.png" id="6_q2ese"]
+[ext_resource type="Texture2D" uid="uid://d37m3qd5d8xm8" path="res://Art/CompositeSpriteSheets/Mouth.png" id="7_ae6xk"]
+[ext_resource type="Theme" uid="uid://dwy6h3pp5fuit" path="res://Art/Default_Button.tres" id="8_i03k6"]
+[ext_resource type="Texture2D" uid="uid://bb2gvdorrutm6" path="res://Art/CompositeSpriteSheets/Eyes2.png" id="9_l5mtl"]
+[ext_resource type="Texture2D" uid="uid://d4lohwbotrexp" path="res://Art/CompositeSpriteSheets/Eyes3.png" id="10_ojaq1"]
+
+[sub_resource type="GDScript" id="GDScript_4m84k"]
+script/source = "extends Control
+
+signal menu_changed(menu_name)
+
+@export var menu_name = \"menu\"
+
+func _on_back_pressed() -> void:
+	emit_signal(\"menu_changed\", menu_name)
+"
+
+[node name="Character" type="Node2D"]
+position = Vector2(-200, -350)
+scale = Vector2(2, 2)
+script = ExtResource("1_0gwam")
+menu_name = "eyes"
+
+[node name="CompositeSprites" type="Node2D" parent="."]
+script = ExtResource("2_v3yrg")
+
+[node name="Body" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(435.5, 371.5)
+scale = Vector2(8.71875, 8.71875)
+texture = ExtResource("3_hlmvs")
+
+[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(435.5, 371.5)
+scale = Vector2(8.71875, 8.71875)
+texture = ExtResource("4_akak7")
+
+[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(435.5, 371.5)
+scale = Vector2(8.71875, 8.71875)
+texture = ExtResource("5_bdy7q")
+
+[node name="Nose" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(435.5, 371.5)
+scale = Vector2(8.71875, 8.71875)
+texture = ExtResource("6_q2ese")
+
+[node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(435.5, 371.5)
+scale = Vector2(8.71875, 8.71875)
+texture = ExtResource("7_ae6xk")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_4m84k")
+
+[node name="GridContainer" type="GridContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 17.712
+anchor_top = 5.574
+anchor_right = 19.63
+anchor_bottom = 7.253
+offset_left = -69.48
+offset_top = 70.04
+offset_right = -96.2001
+offset_bottom = 160.88
+
+[node name="Body1" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("8_i03k6")
+icon = ExtResource("3_hlmvs")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Body2" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("8_i03k6")
+icon = ExtResource("9_l5mtl")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Body3" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("8_i03k6")
+icon = ExtResource("10_ojaq1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Back" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 507.0
+offset_right = 701.0
+offset_bottom = 574.0
+text = "Back
+"
+
+[connection signal="pressed" from="Menu/GridContainer/Body1" to="." method="_on_body_selected" binds= [0]]
+[connection signal="pressed" from="Menu/GridContainer/Body2" to="." method="_on_body_selected" binds= [1]]
+[connection signal="pressed" from="Menu/GridContainer/Body3" to="." method="_on_body_selected" binds= [2]]
+[connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]
