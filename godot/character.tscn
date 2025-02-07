@@ -58,7 +58,15 @@ offset_bottom = 310.0
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
 layout_mode = 2
 
+[node name="ViewHead" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Body"
+
 [node name="ViewBody" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Body"
+
+[node name="ViewEyebrows" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Body"
 
@@ -78,7 +86,9 @@ text = "Nose"
 layout_mode = 2
 text = "Mouth"
 
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewHead" to="." method="_on_view_body_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewBody" to="." method="_on_view_body_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewEyebrows" to="." method="_on_view_body_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewEyes" to="." method="_on_view_eyes_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewHair" to="." method="_on_view_hair_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewNose" to="." method="_on_view_nose_pressed"]
