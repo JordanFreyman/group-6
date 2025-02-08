@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dccmxcw3371ev"]
+[gd_scene load_steps=3 format=3 uid="uid://dccmxcw3371ev"]
 
 [ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="1_uu3rk"]
+[ext_resource type="Script" path="res://game_start_button.gd" id="2_28knd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -26,7 +27,7 @@ theme = ExtResource("1_uu3rk")
 text = "The Game"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="GridContainer"]
+[node name="Game Start" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(1000, 200)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -34,3 +35,6 @@ size_flags_vertical = 2
 theme = ExtResource("1_uu3rk")
 theme_override_font_sizes/font_size = 100
 text = "Create Character"
+script = ExtResource("2_28knd")
+
+[connection signal="pressed" from="GridContainer/Game Start" to="GridContainer/Game Start" method="_on_pressed"]
