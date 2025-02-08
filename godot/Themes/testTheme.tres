@@ -20,7 +20,12 @@ corner_radius_bottom_left = 25
 shadow_size = 10
 
 [resource]
+default_font = ExtResource("1_plj2r")
 Button/fonts/font = ExtResource("1_plj2r")
 Button/styles/hover = SubResource("StyleBoxFlat_c4w4t")
 Button/styles/normal = ExtResource("2_xl7fg")
 Button/styles/pressed = SubResource("StyleBoxFlat_sdq0y")
+Label/colors/font_color = Color(0.678431, 0.580392, 0.972549, 1)
+Label/colors/font_shadow_color = Color(0.811765, 0.596078, 0.886275, 0.129412)
+Label/font_sizes/font_size = 250
+Label/fonts/font = ExtResource("1_plj2r")
