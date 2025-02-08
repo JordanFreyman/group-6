@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cjib8vu7cprxw"]
+
+[ext_resource type="FontFile" uid="uid://b7khg6kpj3vr7" path="res://Themes/AmericanTypewriter.ttc" id="1_plj2r"]
+[ext_resource type="StyleBox" uid="uid://dn4kxhxtreg17" path="res://Themes/purpleButton.tres" id="2_xl7fg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4w4t"]
+bg_color = Color(0.344209, 0.345851, 0.804136, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdq0y"]
+bg_color = Color(0.619507, 0.478004, 0.91389, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_size = 10
+
+[resource]
+Button/fonts/font = ExtResource("1_plj2r")
+Button/styles/hover = SubResource("StyleBoxFlat_c4w4t")
+Button/styles/normal = ExtResource("2_xl7fg")
+Button/styles/pressed = SubResource("StyleBoxFlat_sdq0y")
