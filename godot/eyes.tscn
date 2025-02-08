@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cp85upytfnu2"]
+[gd_scene load_steps=14 format=3 uid="uid://cp85upytfnu2"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_o846p"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_vpxi4"]
 [ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="3_7gedv"]
 [ext_resource type="Texture2D" uid="uid://d6xkd73bmsy0" path="res://Art/CompositeSpriteSheets/Eyes.png" id="4_gdcqm"]
-[ext_resource type="Texture2D" uid="uid://ishq5b0d1fp4" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_n06qa"]
+[ext_resource type="Texture2D" uid="uid://dsqmxnmltxw67" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_n06qa"]
 [ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="5_oeds8"]
 [ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="6_mifkf"]
 [ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_lw5kf"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_0r8w8"]
 [ext_resource type="Theme" uid="uid://dwy6h3pp5fuit" path="res://Art/Default_Button.tres" id="9_x6bo3"]
 [ext_resource type="Texture2D" uid="uid://cq8kkurfsrj12" path="res://Art/CompositeSpriteSheets/Eyes2.png" id="10_x2rkw"]
-[ext_resource type="Texture2D" uid="uid://d4lohwbotrexp" path="res://Art/CompositeSpriteSheets/Eyes3.png" id="11_r1ngx"]
 
 [sub_resource type="GDScript" id="GDScript_4m84k"]
 script/source = "extends Control
@@ -104,14 +103,6 @@ icon = ExtResource("10_x2rkw")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Eyes3" type="Button" parent="Menu/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme = ExtResource("9_x6bo3")
-icon = ExtResource("11_r1ngx")
-icon_alignment = 1
-expand_icon = true
-
 [node name="Back" type="Button" parent="Menu"]
 layout_mode = 0
 offset_left = 575.0
@@ -123,5 +114,4 @@ text = "Back
 
 [connection signal="pressed" from="Menu/GridContainer/Eyes1" to="." method="_on_eyes_selected" binds= [0]]
 [connection signal="pressed" from="Menu/GridContainer/Eyes2" to="." method="_on_eyes_selected" binds= [1]]
-[connection signal="pressed" from="Menu/GridContainer/Eyes3" to="." method="_on_eyes_selected" binds= [2]]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]
