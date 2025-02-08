@@ -1,18 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsh61kk3siuwr"]
+[gd_scene load_steps=13 format=3 uid="uid://dsh61kk3siuwr"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_j4s0o"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_e2og0"]
 [ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="3_813kr"]
-[ext_resource type="Texture2D" uid="uid://ishq5b0d1fp4" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_p6et4"]
-[ext_resource type="Texture2D" uid="uid://d6xkd73bmsy0" path="res://Art/CompositeSpriteSheets/Eyes.png" id="4_vcxdf"]
+[ext_resource type="Texture2D" uid="uid://dsqmxnmltxw67" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_p6et4"]
 [ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="5_eatjt"]
 [ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="6_rfdrx"]
 [ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_chsr7"]
 [ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_a3rqc"]
 [ext_resource type="Theme" uid="uid://dwy6h3pp5fuit" path="res://Art/Default_Button.tres" id="8_qdvde"]
-[ext_resource type="Texture2D" uid="uid://cq8kkurfsrj12" path="res://Art/CompositeSpriteSheets/Eyes2.png" id="9_0dgvr"]
 [ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_n6mfw"]
-[ext_resource type="Texture2D" uid="uid://d4lohwbotrexp" path="res://Art/CompositeSpriteSheets/Eyes3.png" id="10_wxy4f"]
+[ext_resource type="Texture2D" uid="uid://b5sps6qivlf4h" path="res://Art/CompositeSpriteSheets/Nose2.png" id="11_bam3x"]
 
 [sub_resource type="GDScript" id="GDScript_4m84k"]
 script/source = "extends Control
@@ -92,7 +90,7 @@ offset_bottom = 160.88
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme = ExtResource("8_qdvde")
-icon = ExtResource("4_vcxdf")
+icon = ExtResource("7_chsr7")
 icon_alignment = 1
 expand_icon = true
 
@@ -100,15 +98,7 @@ expand_icon = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme = ExtResource("8_qdvde")
-icon = ExtResource("9_0dgvr")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Nose3" type="Button" parent="Menu/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme = ExtResource("8_qdvde")
-icon = ExtResource("10_wxy4f")
+icon = ExtResource("11_bam3x")
 icon_alignment = 1
 expand_icon = true
 
@@ -123,5 +113,4 @@ text = "Back
 
 [connection signal="pressed" from="Menu/GridContainer/Nose1" to="." method="_on_nose_selected" binds= [0]]
 [connection signal="pressed" from="Menu/GridContainer/Nose2" to="." method="_on_nose_selected" binds= [1]]
-[connection signal="pressed" from="Menu/GridContainer/Nose3" to="." method="_on_nose_selected" binds= [2]]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]
