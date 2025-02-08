@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_ux7m7"]
 
 [node name="Character" type="Node2D"]
-position = Vector2(-200, -350)
+position = Vector2(19, -153)
 scale = Vector2(2, 2)
 script = ExtResource("1_bl88u")
 menu_name = "character"
@@ -20,37 +20,37 @@ menu_name = "character"
 script = ExtResource("2_mab3r")
 
 [node name="Body" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(435.5, 371.5)
+position = Vector2(414.527, 361.212)
 scale = Vector2(8.71875, 8.71875)
 texture = ExtResource("2_m6tql")
 
 [node name="Head" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(463.5, 308.5)
+position = Vector2(442.527, 294.212)
 scale = Vector2(2, 2)
 texture = ExtResource("4_8a1a6")
 
 [node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(442.745, 325.43)
+position = Vector2(421.772, 311.142)
 scale = Vector2(2, 2)
 texture = ExtResource("6_5lthg")
 
 [node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(450.535, 320.85)
+position = Vector2(429.563, 306.563)
 scale = Vector2(2.195, 2.195)
 texture = ExtResource("5_5osqb")
 
 [node name="Nose" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(451.255, 347.31)
+position = Vector2(430.283, 333.022)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ipkly")
 
 [node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(442.885, 371.005)
+position = Vector2(421.913, 356.717)
 scale = Vector2(2, 2)
 texture = ExtResource("8_w5ccl")
 
 [node name="Hair" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(439.64, 346.445)
+position = Vector2(418.668, 332.158)
 scale = Vector2(2, 2)
 texture = ExtResource("9_ux7m7")
 
@@ -62,10 +62,10 @@ offset_bottom = 40.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Menu"]
 layout_mode = 0
-offset_left = 634.5
-offset_top = 244.0
-offset_right = 718.5
-offset_bottom = 310.0
+offset_left = 613.527
+offset_top = 233.712
+offset_right = 754.527
+offset_bottom = 474.712
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
 layout_mode = 2
@@ -97,6 +97,19 @@ text = "Nose"
 [node name="ViewMouth" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Mouth"
+
+[node name="Button" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 17.625
+anchor_top = 13.47
+anchor_right = 17.625
+anchor_bottom = 13.47
+offset_left = -69.9725
+offset_top = -51.5875
+offset_right = 26.0275
+offset_bottom = 9.41254
+text = "Done"
 
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewHead" to="." method="_on_view_head_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewBody" to="." method="_on_view_body_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://nunnjs70ye55"]
+[gd_scene load_steps=13 format=3 uid="uid://b882vm8tgvaak"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_i3tn3"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_nydf6"]
@@ -24,46 +24,46 @@ func _on_back_pressed() -> void:
 "
 
 [node name="Character" type="Node2D"]
-position = Vector2(-200, -350)
+position = Vector2(19, -153)
 scale = Vector2(2, 2)
 script = ExtResource("1_i3tn3")
-menu_name = "eyes"
+menu_name = "body"
 
 [node name="CompositeSprites" type="Node2D" parent="."]
 script = ExtResource("2_nydf6")
 
 [node name="Body" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(435.5, 371.5)
+position = Vector2(414.527, 361.212)
 scale = Vector2(8.71875, 8.71875)
 texture = ExtResource("3_k4obv")
 
 [node name="Head" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(463.5, 308.5)
+position = Vector2(442.527, 294.212)
 scale = Vector2(2, 2)
 texture = ExtResource("4_6jpad")
 
 [node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(442.745, 325.43)
+position = Vector2(421.772, 311.142)
 scale = Vector2(2, 2)
 texture = ExtResource("5_c81pi")
 
 [node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(450.535, 320.85)
+position = Vector2(429.563, 306.563)
 scale = Vector2(2.195, 2.195)
 texture = ExtResource("6_1fef1")
 
 [node name="Nose" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(451.255, 347.31)
+position = Vector2(430.283, 333.022)
 scale = Vector2(2, 2)
 texture = ExtResource("7_dcrr8")
 
 [node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(442.885, 371.005)
+position = Vector2(421.913, 356.717)
 scale = Vector2(2, 2)
 texture = ExtResource("8_llxcv")
 
 [node name="Hair" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(439.64, 346.445)
+position = Vector2(418.668, 332.158)
 scale = Vector2(2, 2)
 texture = ExtResource("9_igw2s")
 
