@@ -1,0 +1,162 @@
+[gd_scene load_steps=14 format=3 uid="uid://3lnwdsb7qfbs"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_be1li"]
+[ext_resource type="Script" path="res://composite_sprites.gd" id="2_5fd5i"]
+[ext_resource type="Shader" path="res://scroll.gdshader" id="2_k8tmn"]
+[ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="3_dee0p"]
+[ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="3_nd2o0"]
+[ext_resource type="Texture2D" uid="uid://dsqmxnmltxw67" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_q0f0t"]
+[ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="5_4o52g"]
+[ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="6_rfwy1"]
+[ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_o528c"]
+[ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_sqsv8"]
+[ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_jh6hx"]
+[ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_qaokv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2xoc"]
+shader = ExtResource("2_k8tmn")
+
+[node name="Character" type="Node2D"]
+position = Vector2(19, -153)
+scale = Vector2(2, 2)
+script = ExtResource("1_be1li")
+menu_name = "character"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_b2xoc")
+offset_left = -7.0
+offset_top = 75.0
+offset_right = 958.0
+offset_bottom = 1040.0
+texture = ExtResource("3_nd2o0")
+
+[node name="CompositeSprites" type="Node2D" parent="."]
+script = ExtResource("2_5fd5i")
+
+[node name="Body" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(414.527, 361.212)
+scale = Vector2(8.71875, 8.71875)
+texture = ExtResource("3_dee0p")
+
+[node name="Head" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(442.527, 294.212)
+scale = Vector2(2, 2)
+texture = ExtResource("4_q0f0t")
+
+[node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.772, 311.142)
+scale = Vector2(2, 2)
+texture = ExtResource("5_4o52g")
+
+[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(429.563, 306.563)
+scale = Vector2(2.195, 2.195)
+texture = ExtResource("6_rfwy1")
+
+[node name="Nose" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(430.283, 333.022)
+scale = Vector2(2, 2)
+texture = ExtResource("7_o528c")
+
+[node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.913, 356.717)
+scale = Vector2(2, 2)
+texture = ExtResource("8_sqsv8")
+
+[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(418.668, 332.158)
+scale = Vector2(2, 2)
+texture = ExtResource("9_jh6hx")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+layout_mode = 1
+offset_left = 620.0
+offset_top = 245.0
+offset_right = 764.0
+offset_bottom = 487.0
+scale = Vector2(1.59, 1.59)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Name" type="LineEdit" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("10_qaokv")
+placeholder_text = "Name"
+alignment = 1
+deselect_on_focus_loss_enabled = false
+select_all_on_focus = true
+caret_blink = true
+
+[node name="Pronouns" type="OptionButton" parent="Menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("10_qaokv")
+alignment = 1
+selected = 0
+item_count = 4
+popup/item_0/text = "Pronouns"
+popup/item_0/id = 3
+popup/item_0/disabled = true
+popup/item_0/separator = true
+popup/item_1/text = "He/Him"
+popup/item_2/text = "She/Her"
+popup/item_2/id = 1
+popup/item_3/text = "They/Them"
+popup/item_3/id = 2
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 2
+offset_left = 620.0
+offset_top = 332.45
+offset_right = 764.0
+offset_bottom = 360.45
+theme = ExtResource("10_qaokv")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "wow cool"
+
+[node name="Done" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 17.625
+anchor_top = 13.47
+anchor_right = 17.625
+anchor_bottom = 13.47
+offset_left = 638.5
+offset_top = 498.5
+offset_right = 734.5
+offset_bottom = 559.5
+theme = ExtResource("10_qaokv")
+text = "Done"
+
+[node name="Back" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 17.625
+anchor_top = 13.47
+anchor_right = 17.625
+anchor_bottom = 13.47
+offset_left = 158.0
+offset_top = 498.5
+offset_right = 254.0
+offset_bottom = 559.5
+theme = ExtResource("10_qaokv")
+text = "Back"
+
+[connection signal="focus_entered" from="Menu/MarginContainer/VBoxContainer/Name" to="." method="_on_name_focus_entered"]
+[connection signal="text_changed" from="Menu/MarginContainer/VBoxContainer/Name" to="." method="_on_name_text_changed"]
+[connection signal="text_submitted" from="Menu/MarginContainer/VBoxContainer/Name" to="." method="_on_name_text_submitted"]
+[connection signal="tree_entered" from="Menu/MarginContainer/VBoxContainer/Name" to="." method="_on_name_tree_entered"]
+[connection signal="item_selected" from="Menu/MarginContainer/VBoxContainer/Pronouns" to="." method="_on_pronouns_item_selected"]
+[connection signal="tree_entered" from="Menu/MarginContainer/VBoxContainer/Pronouns" to="." method="_on_pronouns_tree_entered"]
+[connection signal="focus_entered" from="Menu/Label" to="." method="_on_label_focus_entered"]
+[connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]

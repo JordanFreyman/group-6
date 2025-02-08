@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbjfib4n5otf7"]
+[gd_scene load_steps=15 format=3 uid="uid://cbjfib4n5otf7"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_0gwam"]
+[ext_resource type="Shader" path="res://scroll.gdshader" id="2_arfu6"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_v3yrg"]
+[ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="3_f22ad"]
 [ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="3_hlmvs"]
 [ext_resource type="Texture2D" uid="uid://dsqmxnmltxw67" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_4y1v7"]
 [ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="5_titg8"]
@@ -10,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_rsf0a"]
 [ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_2c87r"]
 [ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_b22vq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_auxjp"]
+shader = ExtResource("2_arfu6")
 
 [sub_resource type="GDScript" id="GDScript_4m84k"]
 script/source = "extends Control
@@ -27,6 +32,15 @@ position = Vector2(19, -153)
 scale = Vector2(2, 2)
 script = ExtResource("1_0gwam")
 menu_name = "body"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_auxjp")
+offset_left = -7.0
+offset_top = 75.0
+offset_right = 958.0
+offset_bottom = 1040.0
+texture = ExtResource("3_f22ad")
 
 [node name="CompositeSprites" type="Node2D" parent="."]
 script = ExtResource("2_v3yrg")
@@ -99,6 +113,7 @@ offset_left = 575.0
 offset_top = 507.0
 offset_right = 701.0
 offset_bottom = 574.0
+theme = ExtResource("10_b22vq")
 text = "Back
 "
 

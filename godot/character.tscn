@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6l76o2yaghek"]
+[gd_scene load_steps=14 format=3 uid="uid://c6l76o2yaghek"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_bl88u"]
+[ext_resource type="Shader" path="res://scroll.gdshader" id="2_1oklo"]
+[ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="2_2u70r"]
 [ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="2_m6tql"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_mab3r"]
 [ext_resource type="Texture2D" uid="uid://dsqmxnmltxw67" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_8a1a6"]
@@ -11,11 +13,23 @@
 [ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_ux7m7"]
 [ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_n0wv4"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0o4s"]
+shader = ExtResource("2_1oklo")
+
 [node name="Character" type="Node2D"]
 position = Vector2(19, -153)
 scale = Vector2(2, 2)
 script = ExtResource("1_bl88u")
 menu_name = "character"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_t0o4s")
+offset_left = -7.0
+offset_top = 75.0
+offset_right = 958.0
+offset_bottom = 1040.0
+texture = ExtResource("2_2u70r")
 
 [node name="CompositeSprites" type="Node2D" parent="."]
 script = ExtResource("2_mab3r")
@@ -106,7 +120,7 @@ layout_mode = 2
 theme = ExtResource("10_n0wv4")
 text = "Mouth"
 
-[node name="Button" type="Button" parent="Menu"]
+[node name="Done" type="Button" parent="Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 17.625
@@ -117,6 +131,7 @@ offset_left = -69.9725
 offset_top = -51.5875
 offset_right = 26.0275
 offset_bottom = 9.41254
+theme = ExtResource("10_n0wv4")
 text = "Done"
 
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewHead" to="." method="_on_view_head_pressed"]
@@ -126,3 +141,4 @@ text = "Done"
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewHair" to="." method="_on_view_hair_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewNose" to="." method="_on_view_nose_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewMouth" to="." method="_on_view_mouth_pressed"]
+[connection signal="pressed" from="Menu/Done" to="." method="_on_done_pressed"]

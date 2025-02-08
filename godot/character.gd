@@ -23,8 +23,18 @@ var menu_params := {
 @export var menu_name = "menu"
 @export var switch_to: String
 
-func load_params(new_menu_params: Dictionary):
+var char_name : String
+var char_pronouns = 3
+var pronouns = {
+	0: ["he", "him", "his", "his", "himself"],
+	1: ["she", "her", "her", "hers", "herself"],
+	2: ["they", "them", "their", "theirs", "themselves"]
+}
+
+func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pronouns: int):
 	menu_params = new_menu_params
+	char_name = new_char_name
+	char_pronouns = new_char_pronouns
 
 func _ready():
 	update_sprites()
@@ -113,3 +123,46 @@ func _on_nose_selected(index: int):
 
 func _on_mouth_selected(index: int):
 	set_feature("currMouth", index)
+
+
+func _on_done_pressed() -> void:
+	switch_to = "info_menu"
+	emit_signal("menu_changed", menu_name)
+
+
+func _on_name_text_submitted(new_text: String) -> void:
+	char_name = new_text
+	print(char_name) #test
+
+func _on_name_text_changed(new_text: String) -> void:
+	char_name = new_text
+
+func _on_pronouns_item_selected(index: int) -> void:
+	if index == 3:
+		pass
+	char_pronouns = index-1
+	if char_pronouns != 2:
+		print(pronouns[char_pronouns][0] + "'s beautiful")
+	else:
+		print(pronouns[char_pronouns][0] + "'re beautiful")
+	
+	if char_pronouns != 2:
+		$Menu/Label.text = pronouns[char_pronouns][0] + "'s beautiful"
+	else:
+		$Menu/Label.text = pronouns[char_pronouns][0] + "'re beautiful"
+
+
+func _on_name_focus_entered() -> void:
+	$Menu/MarginContainer/VBoxContainer/Name.text = char_name
+
+func _on_name_tree_entered() -> void:
+	$Menu/MarginContainer/VBoxContainer/Name.text = char_name
+
+func _on_pronouns_tree_entered() -> void:
+	$Menu/MarginContainer/VBoxContainer/Pronouns.selected = char_pronouns+1
+	if char_pronouns == 3:
+		$Menu/Label.text = "wow cool"
+	elif char_pronouns != 2:
+		$Menu/Label.text = pronouns[char_pronouns][0] + "'s beautiful"
+	else:
+		$Menu/Label.text = pronouns[char_pronouns][0] + "'re beautiful"

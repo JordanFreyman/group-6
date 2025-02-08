@@ -32,4 +32,4 @@ func handle_menu_changed(current_menu_name: String):
 
 func transfer_data_between_scenes(old_scene, new_scene):
 	#new_scene.currEyes = old_scene.currEyes
-	new_scene.load_params(old_scene.menu_params)
+	new_scene.load_params(old_scene.menu_params, old_scene.char_name, old_scene.char_pronouns)
