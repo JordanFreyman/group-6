@@ -38,6 +38,9 @@ func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pr
 
 func _ready():
 	update_sprites()
+	var slider_vals = {
+		"hairHeight": $CompositeSprites/Hair.global_position.y
+	}
 
 # Function to update all sprite textures based on menu_params
 func update_sprites():
@@ -166,3 +169,23 @@ func _on_pronouns_tree_entered() -> void:
 		$Menu/Label.text = pronouns[char_pronouns][0] + "'s beautiful"
 	else:
 		$Menu/Label.text = pronouns[char_pronouns][0] + "'re beautiful"
+
+var drag_started = 0
+
+func _on_h_slider_drag_ended(value_changed: bool) -> void:
+	var val = $HSlider.value
+	hairSprite.global_position.y += val - drag_started
+
+func _on_h_slider_drag_started() -> void:
+	drag_started = $HSlider.value
+
+#height slider
+func _on_v_slider_drag_started() -> void:
+	var val = $VSlider.value
+	print(val)
+	print(val - drag_started)
+	bodySprite.scale.y = val
+
+#height slider
+func _on_v_slider_drag_ended(value_changed: bool) -> void:
+	drag_started = $VSlider.value

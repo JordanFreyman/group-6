@@ -106,6 +106,7 @@ popup/item_0/id = 3
 popup/item_0/disabled = true
 popup/item_0/separator = true
 popup/item_1/text = "He/Him"
+popup/item_1/id = 1
 popup/item_2/text = "She/Her"
 popup/item_2/id = 1
 popup/item_3/text = "They/Them"
