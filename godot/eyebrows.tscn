@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="5_x6jlu"]
 [ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="6_hhyrh"]
 [ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="7_atdlb"]
-[ext_resource type="Theme" uid="uid://dwy6h3pp5fuit" path="res://Art/Default_Button.tres" id="8_5ntgo"]
 [ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="8_rqqfo"]
 [ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="9_10iab"]
+[ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_fiyd2"]
 [ext_resource type="Texture2D" uid="uid://x6kx7rftbrqh" path="res://Art/CompositeSpriteSheets/Eyebrows2.png" id="10_o7jat"]
 
 [sub_resource type="GDScript" id="GDScript_4m84k"]
@@ -89,7 +89,7 @@ offset_bottom = 160.88
 [node name="Eyebrows1" type="Button" parent="Menu/GridContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme = ExtResource("8_5ntgo")
+theme = ExtResource("10_fiyd2")
 icon = ExtResource("9_10iab")
 icon_alignment = 1
 expand_icon = true
@@ -97,7 +97,7 @@ expand_icon = true
 [node name="Eyebrows2" type="Button" parent="Menu/GridContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme = ExtResource("8_5ntgo")
+theme = ExtResource("10_fiyd2")
 icon = ExtResource("10_o7jat")
 icon_alignment = 1
 expand_icon = true

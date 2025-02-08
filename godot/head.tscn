@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="5_x4i2c"]
 [ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="6_g07xo"]
 [ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_qc53t"]
-[ext_resource type="Theme" uid="uid://dwy6h3pp5fuit" path="res://Art/Default_Button.tres" id="8_fdfdb"]
 [ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_kyejb"]
 [ext_resource type="Texture2D" uid="uid://dsqmxnmltxw67" path="res://Art/CompositeSpriteSheets/Head1.png" id="9_i4eqi"]
 [ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_jxt1f"]
+[ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_5r58s"]
 
 [sub_resource type="GDScript" id="GDScript_4m84k"]
 script/source = "extends Control
@@ -88,7 +88,7 @@ offset_bottom = 160.88
 [node name="Head1" type="Button" parent="Menu/GridContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme = ExtResource("8_fdfdb")
+theme = ExtResource("10_5r58s")
 icon = ExtResource("9_i4eqi")
 icon_alignment = 1
 expand_icon = true

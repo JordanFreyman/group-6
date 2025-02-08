@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_lw5kf"]
 [ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_2s31x"]
 [ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_0r8w8"]
-[ext_resource type="Theme" uid="uid://dwy6h3pp5fuit" path="res://Art/Default_Button.tres" id="9_x6bo3"]
+[ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_mfekp"]
 [ext_resource type="Texture2D" uid="uid://cq8kkurfsrj12" path="res://Art/CompositeSpriteSheets/Eyes2.png" id="10_x2rkw"]
 
 [sub_resource type="GDScript" id="GDScript_4m84k"]
@@ -89,7 +89,7 @@ offset_bottom = 160.88
 [node name="Eyes1" type="Button" parent="Menu/GridContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme = ExtResource("9_x6bo3")
+theme = ExtResource("10_mfekp")
 icon = ExtResource("6_mifkf")
 icon_alignment = 1
 expand_icon = true
@@ -97,7 +97,7 @@ expand_icon = true
 [node name="Eyes2" type="Button" parent="Menu/GridContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-theme = ExtResource("9_x6bo3")
+theme = ExtResource("10_mfekp")
 icon = ExtResource("10_x2rkw")
 icon_alignment = 1
 expand_icon = true

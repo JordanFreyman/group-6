@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6l76o2yaghek"]
+[gd_scene load_steps=11 format=3 uid="uid://c6l76o2yaghek"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_bl88u"]
 [ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="2_m6tql"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_ipkly"]
 [ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_w5ccl"]
 [ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_ux7m7"]
+[ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_n0wv4"]
 
 [node name="Character" type="Node2D"]
 position = Vector2(19, -153)
@@ -72,30 +73,37 @@ layout_mode = 2
 
 [node name="ViewHead" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("10_n0wv4")
 text = "Head"
 
 [node name="ViewBody" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("10_n0wv4")
 text = "Body"
 
 [node name="ViewEyebrows" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("10_n0wv4")
 text = "Eyebrows"
 
 [node name="ViewEyes" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("10_n0wv4")
 text = "Eyes (functional)"
 
 [node name="ViewHair" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("10_n0wv4")
 text = "Hair (functional?)"
 
 [node name="ViewNose" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("10_n0wv4")
 text = "Nose"
 
 [node name="ViewMouth" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("10_n0wv4")
 text = "Mouth"
 
 [node name="Button" type="Button" parent="Menu"]
