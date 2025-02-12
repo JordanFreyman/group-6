@@ -122,13 +122,15 @@ offset_left = 95.5
 offset_top = 249.0
 offset_right = 133.5
 offset_bottom = 353.0
-max_value = 10.0
+min_value = 2.0
+max_value = 13.0
 step = 2.0
-value = 6.0
+value = 8.0
 rounded = true
 tick_count = 5
 
 [connection signal="pressed" from="Menu/GridContainer/Body1" to="." method="_on_body_selected" binds= [0]]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]
-[connection signal="drag_ended" from="VSlider" to="." method="_on_v_slider_drag_ended"]
-[connection signal="drag_started" from="VSlider" to="." method="_on_v_slider_drag_started"]
+[connection signal="child_entered_tree" from="VSlider" to="." method="_on_v_slider_child_entered_tree"]
+[connection signal="tree_entered" from="VSlider" to="." method="_on_v_slider_tree_entered"]
+[connection signal="value_changed" from="VSlider" to="." method="_on_v_slider_value_changed"]

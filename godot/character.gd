@@ -38,9 +38,15 @@ func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pr
 
 func _ready():
 	update_sprites()
-	var slider_vals = {
-		"hairHeight": $CompositeSprites/Hair.global_position.y
-	}
+	if "height_scale" in menu_params:
+		bodySprite.scale.y = menu_params["height_scale"]
+		bodySprite.position.y = menu_params["body_y"]
+		headSprite.position.y = menu_params["head_y"]
+		hairSprite.position.y = menu_params["hair_y"]
+		eyebrowsSprite.position.y = menu_params["eyebrows_y"]
+		eyesSprite.position.y = menu_params["eyes_y"]
+		noseSprite.position.y = menu_params["nose_y"]
+		mouthSprite.position.y = menu_params["mouth_y"]
 
 # Function to update all sprite textures based on menu_params
 func update_sprites():
@@ -169,23 +175,26 @@ func _on_pronouns_tree_entered() -> void:
 		$Menu/Label.text = pronouns[char_pronouns][0] + "'s beautiful"
 	else:
 		$Menu/Label.text = pronouns[char_pronouns][0] + "'re beautiful"
-
-var drag_started = 0
-
-func _on_h_slider_drag_ended(value_changed: bool) -> void:
-	var val = $HSlider.value
-	hairSprite.global_position.y += val - drag_started
-
-func _on_h_slider_drag_started() -> void:
-	drag_started = $HSlider.value
-
-#height slider
-func _on_v_slider_drag_started() -> void:
-	var val = $VSlider.value
-	print(val)
-	print(val - drag_started)
-	bodySprite.scale.y = val
-
-#height slider
-func _on_v_slider_drag_ended(value_changed: bool) -> void:
-	drag_started = $VSlider.value
+	
+func _on_v_slider_value_changed(value: float) -> void:
+	var original_height = bodySprite.texture.get_height() * bodySprite.scale.y
+	bodySprite.scale.y = value
+	var new_height = bodySprite.texture.get_height() * bodySprite.scale.y
+	var height_diff = (original_height - new_height) / 2
+	bodySprite.position.y += height_diff
+	headSprite.position.y += height_diff
+	hairSprite.position.y += height_diff
+	eyebrowsSprite.position.y += height_diff
+	eyesSprite.position.y += height_diff
+	noseSprite.position.y += height_diff
+	mouthSprite.position.y += height_diff
+	#save new positions and scales
+	#note: turn this into a function later
+	menu_params["height_scale"] = bodySprite.scale.y
+	menu_params["body_y"] = bodySprite.position.y
+	menu_params["head_y"] = headSprite.position.y
+	menu_params["hair_y"] = hairSprite.position.y
+	menu_params["eyebrows_y"] = eyebrowsSprite.position.y
+	menu_params["eyes_y"] = eyesSprite.position.y
+	menu_params["nose_y"] = noseSprite.position.y
+	menu_params["mouth_y"] = mouthSprite.position.y

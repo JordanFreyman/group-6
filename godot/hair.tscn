@@ -126,31 +126,6 @@ theme = ExtResource("10_4nx3f")
 text = "Back
 "
 
-[node name="HSlider" type="HSlider" parent="."]
-offset_left = 56.5
-offset_top = 305.0
-offset_right = 158.5
-offset_bottom = 347.0
-min_value = -50.0
-max_value = 50.0
-step = 10.0
-tick_count = 5
-
-[node name="Label" type="Label" parent="."]
-offset_left = 54.5
-offset_top = 288.0
-offset_right = 165.5
-offset_bottom = 316.0
-theme = ExtResource("10_4nx3f")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "Height"
-horizontal_alignment = 1
-
 [connection signal="pressed" from="Menu/GridContainer/Hair1" to="." method="_on_hair_selected" binds= [0]]
 [connection signal="pressed" from="Menu/GridContainer/Hair2" to="." method="_on_hair_selected" binds= [1]]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]
-[connection signal="drag_ended" from="HSlider" to="." method="_on_h_slider_drag_ended"]
-[connection signal="drag_started" from="HSlider" to="." method="_on_h_slider_drag_started"]
