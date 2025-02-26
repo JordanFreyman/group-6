@@ -1,17 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6l76o2yaghek"]
+[gd_scene load_steps=15 format=3 uid="uid://c6l76o2yaghek"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_bl88u"]
 [ext_resource type="Shader" path="res://scroll.gdshader" id="2_1oklo"]
 [ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="2_2u70r"]
-[ext_resource type="Texture2D" uid="uid://ctr5ftpteskji" path="res://Art/CompositeSpriteSheets/Body.png" id="2_m6tql"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_mab3r"]
-[ext_resource type="Texture2D" uid="uid://dsqmxnmltxw67" path="res://Art/CompositeSpriteSheets/Head1.png" id="4_8a1a6"]
-[ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="5_5osqb"]
-[ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="6_5lthg"]
-[ext_resource type="Texture2D" uid="uid://d0fld68dlpb6f" path="res://Art/CompositeSpriteSheets/Nose1.png" id="7_ipkly"]
-[ext_resource type="Texture2D" uid="uid://k6eaaouf4uj8" path="res://Art/CompositeSpriteSheets/Mouth1.png" id="8_w5ccl"]
+[ext_resource type="Texture2D" uid="uid://b16r4fbdlntpg" path="res://Art/pixil-layer-head.png" id="5_luk48"]
+[ext_resource type="Texture2D" uid="uid://ditrnph5kfv6t" path="res://Art/pixil-layer-eyebrows1.png" id="6_ncsuh"]
+[ext_resource type="Texture2D" uid="uid://ce6vyeysd5c34" path="res://Art/pixil-layer-eyes1.png" id="7_75o71"]
+[ext_resource type="Texture2D" uid="uid://df24j0b8f5dyw" path="res://Art/pixil-layer-nose1.png" id="8_2ajjb"]
+[ext_resource type="Texture2D" uid="uid://cdvfkjqe50phk" path="res://Art/pixil-layer-mouth1.png" id="9_q1uvt"]
 [ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_ux7m7"]
 [ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_n0wv4"]
+[ext_resource type="Texture2D" uid="uid://yci1xnevwubf" path="res://Art/pixil-layer-shirt.png" id="11_7itku"]
+[ext_resource type="Texture2D" uid="uid://bclwu6e63qb8p" path="res://Art/pixil-layer-pants.png" id="12_glytm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0o4s"]
 shader = ExtResource("2_1oklo")
@@ -30,44 +31,6 @@ offset_top = 75.0
 offset_right = 958.0
 offset_bottom = 1040.0
 texture = ExtResource("2_2u70r")
-
-[node name="CompositeSprites" type="Node2D" parent="."]
-script = ExtResource("2_mab3r")
-
-[node name="Body" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(414.527, 361.212)
-scale = Vector2(8.71875, 8.71875)
-texture = ExtResource("2_m6tql")
-
-[node name="Head" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(442.527, 294.212)
-scale = Vector2(2, 2)
-texture = ExtResource("4_8a1a6")
-
-[node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(421.772, 311.142)
-scale = Vector2(2, 2)
-texture = ExtResource("6_5lthg")
-
-[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(429.563, 306.563)
-scale = Vector2(2.195, 2.195)
-texture = ExtResource("5_5osqb")
-
-[node name="Nose" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(430.283, 333.022)
-scale = Vector2(2, 2)
-texture = ExtResource("7_ipkly")
-
-[node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(421.913, 356.717)
-scale = Vector2(2, 2)
-texture = ExtResource("8_w5ccl")
-
-[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(418.668, 332.158)
-scale = Vector2(2, 2)
-texture = ExtResource("9_ux7m7")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
@@ -90,10 +53,10 @@ layout_mode = 2
 theme = ExtResource("10_n0wv4")
 text = "Head"
 
-[node name="ViewBody" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
+[node name="ViewShirt" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("10_n0wv4")
-text = "Body"
+text = "Shirt"
 
 [node name="ViewEyebrows" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -103,12 +66,12 @@ text = "Eyebrows"
 [node name="ViewEyes" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("10_n0wv4")
-text = "Eyes (functional)"
+text = "Eyes"
 
 [node name="ViewHair" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("10_n0wv4")
-text = "Hair (functional?)"
+text = "Hair"
 
 [node name="ViewNose" type="Button" parent="Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -134,8 +97,51 @@ offset_bottom = 9.41254
 theme = ExtResource("10_n0wv4")
 text = "Done"
 
+[node name="CompositeSprites" type="Node2D" parent="."]
+position = Vector2(0, -13.425)
+script = ExtResource("2_mab3r")
+
+[node name="Head" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421, 450.212)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("5_luk48")
+
+[node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.772, 434.142)
+texture = ExtResource("6_ncsuh")
+
+[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(422.563, 478.563)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("7_75o71")
+
+[node name="Nose" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.508, 478.022)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("8_2ajjb")
+
+[node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.913, 457.717)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("9_q1uvt")
+
+[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(418.668, 332.158)
+scale = Vector2(2, 2)
+texture = ExtResource("9_ux7m7")
+
+[node name="Pants" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(924.785, 1003.44)
+scale = Vector2(1.44, 1.44)
+texture = ExtResource("12_glytm")
+
+[node name="Shirt" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(420.357, 456.107)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("11_7itku")
+
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewHead" to="." method="_on_view_head_pressed"]
-[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewBody" to="." method="_on_view_body_pressed"]
+[connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewShirt" to="." method="_on_view_shirt_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewEyebrows" to="." method="_on_view_eyebrows_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewEyes" to="." method="_on_view_eyes_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewHair" to="." method="_on_view_hair_pressed"]

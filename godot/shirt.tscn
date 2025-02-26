@@ -1,0 +1,172 @@
+[gd_scene load_steps=17 format=3 uid="uid://cbjfib4n5otf7"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_wkx53"]
+[ext_resource type="Shader" path="res://scroll.gdshader" id="2_hey14"]
+[ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="3_mk2gj"]
+[ext_resource type="Script" path="res://composite_sprites.gd" id="4_6bndq"]
+[ext_resource type="Texture2D" uid="uid://yci1xnevwubf" path="res://Art/pixil-layer-shirt.png" id="5_4wi7o"]
+[ext_resource type="Texture2D" uid="uid://b16r4fbdlntpg" path="res://Art/pixil-layer-head.png" id="5_lrfkn"]
+[ext_resource type="Texture2D" uid="uid://ditrnph5kfv6t" path="res://Art/pixil-layer-eyebrows1.png" id="6_u1mok"]
+[ext_resource type="Texture2D" uid="uid://ce6vyeysd5c34" path="res://Art/pixil-layer-eyes1.png" id="7_8uuxn"]
+[ext_resource type="Texture2D" uid="uid://df24j0b8f5dyw" path="res://Art/pixil-layer-nose1.png" id="8_jexbi"]
+[ext_resource type="Texture2D" uid="uid://cdvfkjqe50phk" path="res://Art/pixil-layer-mouth1.png" id="9_6wre5"]
+[ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="11_h7uq3"]
+[ext_resource type="Texture2D" uid="uid://bclwu6e63qb8p" path="res://Art/pixil-layer-pants.png" id="11_ltv28"]
+[ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="12_mg5oa"]
+[ext_resource type="Texture2D" uid="uid://ca0twlpybk0ix" path="res://arrow.png" id="13_ov5no"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_auxjp"]
+shader = ExtResource("2_hey14")
+
+[sub_resource type="GDScript" id="GDScript_4m84k"]
+script/source = "extends Control
+
+signal menu_changed(menu_name)
+
+@export var menu_name = \"menu\"
+
+func _on_back_pressed() -> void:
+	emit_signal(\"menu_changed\", menu_name)
+"
+
+[node name="Character" type="Node2D"]
+position = Vector2(19, -153)
+scale = Vector2(2, 2)
+script = ExtResource("1_wkx53")
+menu_name = "body"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_auxjp")
+offset_left = -7.0
+offset_top = 75.0
+offset_right = 958.0
+offset_bottom = 1040.0
+texture = ExtResource("3_mk2gj")
+
+[node name="CompositeSprites" type="Node2D" parent="."]
+position = Vector2(0, -13.425)
+script = ExtResource("4_6bndq")
+
+[node name="Head" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421, 450.212)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("5_lrfkn")
+
+[node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.772, 434.142)
+texture = ExtResource("6_u1mok")
+
+[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(422.563, 478.563)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("7_8uuxn")
+
+[node name="Nose" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.508, 478.022)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("8_jexbi")
+
+[node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.913, 457.717)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("9_6wre5")
+
+[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(418.668, 332.158)
+scale = Vector2(2, 2)
+texture = ExtResource("11_h7uq3")
+
+[node name="Pants" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(420.3, 443.99)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("11_ltv28")
+
+[node name="Shirt" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(420.357, 456.107)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_4wi7o")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_4m84k")
+
+[node name="GridContainer" type="GridContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 17.712
+anchor_top = 5.574
+anchor_right = 19.63
+anchor_bottom = 7.253
+offset_left = -69.48
+offset_top = 70.04
+offset_right = -96.2001
+offset_bottom = 160.88
+
+[node name="Shirt1" type="Button" parent="Menu/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("12_mg5oa")
+icon = ExtResource("5_4wi7o")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Back" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 507.0
+offset_right = 701.0
+offset_bottom = 574.0
+theme = ExtResource("12_mg5oa")
+text = "Back
+"
+
+[node name="VSlider" type="VSlider" parent="."]
+offset_left = 95.5
+offset_top = 249.0
+offset_right = 133.5
+offset_bottom = 353.0
+min_value = 0.4
+max_value = 1.7
+step = 0.0
+value = 1.0
+tick_count = 5
+
+[node name="Width" type="VSlider" parent="."]
+offset_left = 154.5
+offset_top = 249.0
+offset_right = 192.5
+offset_bottom = 353.0
+min_value = 0.4
+max_value = 2.0
+step = 0.0
+value = 1.2
+tick_count = 5
+
+[node name="Height Arrow" type="TextureRect" parent="."]
+offset_left = 85.5
+offset_top = 353.5
+offset_right = 142.5
+offset_bottom = 410.5
+texture = ExtResource("13_ov5no")
+expand_mode = 1
+
+[node name="Width Arrow" type="TextureRect" parent="."]
+offset_left = 206.5
+offset_top = 354.5
+offset_right = 263.5
+offset_bottom = 411.5
+rotation = 1.5708
+texture = ExtResource("13_ov5no")
+expand_mode = 1
+
+[connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]
+[connection signal="child_entered_tree" from="VSlider" to="." method="_on_v_slider_child_entered_tree"]
+[connection signal="tree_entered" from="VSlider" to="." method="_on_v_slider_tree_entered"]
+[connection signal="value_changed" from="VSlider" to="." method="_on_v_slider_value_changed"]
+[connection signal="child_entered_tree" from="Width" to="." method="_on_v_slider_child_entered_tree"]
+[connection signal="tree_entered" from="Width" to="." method="_on_v_slider_tree_entered"]
+[connection signal="value_changed" from="Width" to="." method="_on_width_value_changed"]

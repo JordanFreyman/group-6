@@ -3,7 +3,8 @@ extends Node2D
 signal menu_changed(menu_name)
 
 @onready var headSprite = $CompositeSprites/Head
-@onready var bodySprite = $CompositeSprites/Body
+@onready var shirtSprite = $CompositeSprites/Shirt
+@onready var pantsSprite = $CompositeSprites/Pants
 @onready var eyebrowsSprite = $CompositeSprites/Eyebrows
 @onready var eyesSprite = $CompositeSprites/Eyes
 @onready var hairSprite = $CompositeSprites/Hair
@@ -12,7 +13,8 @@ signal menu_changed(menu_name)
 
 var menu_params := {
 	"currHead": 0,
-	"currBody": 0,
+	"currShirt": 0,
+	"currPants": 0,
 	"currEyebrows": 0,
 	"currEyes": 0,
 	"currHair": 0,
@@ -39,19 +41,25 @@ func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pr
 func _ready():
 	update_sprites()
 	if "height_scale" in menu_params:
-		bodySprite.scale.y = menu_params["height_scale"]
-		bodySprite.position.y = menu_params["body_y"]
+		shirtSprite.scale.y = menu_params["height_scale"]
+		shirtSprite.position.y = menu_params["shirt_y"]
+		pantsSprite.scale.y = menu_params["height_scale"]
+		pantsSprite.position.y = menu_params["pants_y"]
 		headSprite.position.y = menu_params["head_y"]
 		hairSprite.position.y = menu_params["hair_y"]
 		eyebrowsSprite.position.y = menu_params["eyebrows_y"]
 		eyesSprite.position.y = menu_params["eyes_y"]
 		noseSprite.position.y = menu_params["nose_y"]
 		mouthSprite.position.y = menu_params["mouth_y"]
+	if "width_scale" in menu_params:
+		shirtSprite.scale.x = menu_params["width_scale"]
+		pantsSprite.scale.x = menu_params["width_scale"]
 
 # Function to update all sprite textures based on menu_params
 func update_sprites():
 	headSprite.texture = $CompositeSprites.head_spritesheet[menu_params["currHead"]]
-	bodySprite.texture = $CompositeSprites.body_spritesheet[menu_params["currBody"]]
+	shirtSprite.texture = $CompositeSprites.shirt_spritesheet[menu_params["currShirt"]]
+	pantsSprite.texture = $CompositeSprites.pants_spritesheet[menu_params["currPants"]]
 	eyebrowsSprite.texture = $CompositeSprites.eyebrows_spritesheet[menu_params["currEyebrows"]]
 	eyesSprite.texture = $CompositeSprites.eyes_spritesheet[menu_params["currEyes"]]
 	hairSprite.texture = $CompositeSprites.hair_spritesheet[menu_params["currHair"]]
@@ -64,8 +72,10 @@ func set_feature(feature: String, index: int):
 	match feature:
 		"currHead":
 			headSprite.texture = $CompositeSprites.head_spritesheet[index]
-		"currBody":
-			bodySprite.texture = $CompositeSprites.body_spritesheet[index]
+		"currShirt":
+			shirtSprite.texture = $CompositeSprites.shirt_spritesheet[index]
+		"currPants":
+			pantsSprite.texture = $CompositeSprites.pants_spritesheet[index]
 		"currEyebrows":
 			eyebrowsSprite.texture = $CompositeSprites.eyebrows_spritesheet[index]
 		"currEyes":
@@ -82,8 +92,8 @@ func _on_view_head_pressed():
 	switch_to = "head"
 	emit_signal("menu_changed", menu_name)
 
-func _on_view_body_pressed():
-	switch_to = "body"
+func _on_view_shirt_pressed():
+	switch_to = "shirt"
 	emit_signal("menu_changed", menu_name)
 
 func _on_view_eyebrows_pressed():
@@ -113,8 +123,8 @@ func _on_back_pressed():
 func _on_head_selected(index: int):
 	set_feature("currHead", index)
 
-func _on_body_selected(index: int):
-	set_feature("currBody", index)
+func _on_shirt_selected(index: int):
+	set_feature("currShirt", index)
 
 func _on_eyebrows_selected(index: int):
 	set_feature("currEyebrows", index)
@@ -177,24 +187,43 @@ func _on_pronouns_tree_entered() -> void:
 		$Menu/Label.text = pronouns[char_pronouns][0] + "'re beautiful"
 	
 func _on_v_slider_value_changed(value: float) -> void:
-	var original_height = bodySprite.texture.get_height() * bodySprite.scale.y
-	bodySprite.scale.y = value
-	var new_height = bodySprite.texture.get_height() * bodySprite.scale.y
-	var height_diff = (original_height - new_height) / 2
-	bodySprite.position.y += height_diff
-	headSprite.position.y += height_diff
-	hairSprite.position.y += height_diff
-	eyebrowsSprite.position.y += height_diff
-	eyesSprite.position.y += height_diff
-	noseSprite.position.y += height_diff
-	mouthSprite.position.y += height_diff
-	#save new positions and scales
-	#note: turn this into a function later
-	menu_params["height_scale"] = bodySprite.scale.y
-	menu_params["body_y"] = bodySprite.position.y
+	# Scale pants while keeping feet anchored
+	var pants_bottom = pantsSprite.position.y + (pantsSprite.texture.get_height() * pantsSprite.scale.y / 2)
+	var original_pants_height = pantsSprite.texture.get_height() * pantsSprite.scale.y
+	pantsSprite.scale.y = value
+	var new_pants_height = pantsSprite.texture.get_height() * pantsSprite.scale.y
+	pantsSprite.position.y = pants_bottom - (new_pants_height / 2)  # Keep feet in place
+
+	# Scale shirt from the waist upward
+	var original_shirt_height = shirtSprite.texture.get_height() * shirtSprite.scale.y
+	shirtSprite.scale.y = value
+	var new_shirt_height = shirtSprite.texture.get_height() * shirtSprite.scale.y
+	var height_diff = (new_shirt_height - original_shirt_height)  # Shirt grows upwards
+	
+	shirtSprite.position.y -= height_diff / 2  # Move shirt up
+
+	# Adjust head and facial features to move up
+	headSprite.position.y -= height_diff / 2
+	hairSprite.position.y -= height_diff / 2
+	eyebrowsSprite.position.y -= height_diff / 2
+	eyesSprite.position.y -= height_diff / 2
+	noseSprite.position.y -= height_diff / 2
+	mouthSprite.position.y -= height_diff / 2
+
+	# Save updated values
+	menu_params["height_scale"] = shirtSprite.scale.y
+	menu_params["shirt_y"] = shirtSprite.position.y
+	menu_params["pants_y"] = pantsSprite.position.y
 	menu_params["head_y"] = headSprite.position.y
 	menu_params["hair_y"] = hairSprite.position.y
 	menu_params["eyebrows_y"] = eyebrowsSprite.position.y
 	menu_params["eyes_y"] = eyesSprite.position.y
 	menu_params["nose_y"] = noseSprite.position.y
 	menu_params["mouth_y"] = mouthSprite.position.y
+
+
+
+func _on_width_value_changed(value: float) -> void:
+	shirtSprite.scale.x = value
+	pantsSprite.scale.x = value
+	menu_params["width_scale"] = shirtSprite.scale.x
