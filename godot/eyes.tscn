@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://cpltqnjbbrpw3" path="res://Art/CompositeSpriteSheets/Eyes1.png" id="6_mifkf"]
 [ext_resource type="Texture2D" uid="uid://ce6vyeysd5c34" path="res://Art/pixil-layer-eyes1.png" id="7_ebsll"]
 [ext_resource type="Texture2D" uid="uid://df24j0b8f5dyw" path="res://Art/pixil-layer-nose1.png" id="8_7uy8f"]
-[ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_0r8w8"]
 [ext_resource type="Texture2D" uid="uid://cdvfkjqe50phk" path="res://Art/pixil-layer-mouth1.png" id="9_6bve2"]
 [ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_mfekp"]
 [ext_resource type="Texture2D" uid="uid://cq8kkurfsrj12" path="res://Art/CompositeSpriteSheets/Eyes2.png" id="10_x2rkw"]
+[ext_resource type="Texture2D" uid="uid://c33xg1gtkb8cb" path="res://Art/pixil-layer-hair 1.png" id="13_6skw0"]
 [ext_resource type="Texture2D" uid="uid://bclwu6e63qb8p" path="res://Art/pixil-layer-pants.png" id="14_fw3ir"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o1ejt"]
@@ -119,13 +119,13 @@ scale = Vector2(1.15, 1.15)
 texture = ExtResource("9_6bve2")
 
 [node name="Hair" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(418.668, 332.158)
-scale = Vector2(2, 2)
-texture = ExtResource("9_0r8w8")
+position = Vector2(420.668, 446.573)
+scale = Vector2(1.06, 1.06)
+texture = ExtResource("13_6skw0")
 
 [node name="Pants" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(924.785, 1003.44)
-scale = Vector2(1.44, 1.44)
+position = Vector2(420.555, 445.44)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("14_fw3ir")
 
 [node name="Shirt" type="Sprite2D" parent="CompositeSprites"]

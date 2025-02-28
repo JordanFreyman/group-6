@@ -29,8 +29,8 @@ var eyes_spritesheet = {
 }
 
 var hair_spritesheet = {
-	0 : preload("res://Art/CompositeSpriteSheets/Hair1.png"),
-	1: preload("res://Art/CompositeSpriteSheets/Hair2.png")
+	0 : preload("res://Art/pixil-layer-hair 1.png"),
+	1: preload("res://Art/pixil-layer-hair 2.png")
 }
 
 var nose_spritesheet = {

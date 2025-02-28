@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://drx4ohsuqs20u"]
+[gd_scene load_steps=18 format=3 uid="uid://bujiraqff0334"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_pwsg3"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_gycy1"]
 [ext_resource type="Shader" path="res://scroll.gdshader" id="2_yg054"]
 [ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="3_a2135"]
 [ext_resource type="Texture2D" uid="uid://yci1xnevwubf" path="res://Art/pixil-layer-shirt.png" id="5_8jfjo"]
-[ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="5_x6jlu"]
 [ext_resource type="Texture2D" uid="uid://b16r4fbdlntpg" path="res://Art/pixil-layer-head.png" id="6_wpfyg"]
 [ext_resource type="Texture2D" uid="uid://ditrnph5kfv6t" path="res://Art/pixil-layer-eyebrows1.png" id="7_eoufa"]
 [ext_resource type="Texture2D" uid="uid://ce6vyeysd5c34" path="res://Art/pixil-layer-eyes1.png" id="8_02l6h"]
@@ -14,6 +13,7 @@
 [ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_fiyd2"]
 [ext_resource type="Texture2D" uid="uid://cdvfkjqe50phk" path="res://Art/pixil-layer-mouth1.png" id="10_hxfnr"]
 [ext_resource type="Texture2D" uid="uid://x6kx7rftbrqh" path="res://Art/CompositeSpriteSheets/Eyebrows2.png" id="10_o7jat"]
+[ext_resource type="Texture2D" uid="uid://c33xg1gtkb8cb" path="res://Art/pixil-layer-hair 1.png" id="13_a27sb"]
 [ext_resource type="Texture2D" uid="uid://bclwu6e63qb8p" path="res://Art/pixil-layer-pants.png" id="14_fepq1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qdf10"]
@@ -119,13 +119,13 @@ scale = Vector2(1.15, 1.15)
 texture = ExtResource("10_hxfnr")
 
 [node name="Hair" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(418.668, 332.158)
-scale = Vector2(2, 2)
-texture = ExtResource("5_x6jlu")
+position = Vector2(420.668, 446.573)
+scale = Vector2(1.06, 1.06)
+texture = ExtResource("13_a27sb")
 
 [node name="Pants" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(924.785, 1003.44)
-scale = Vector2(1.44, 1.44)
+position = Vector2(420.555, 445.44)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("14_fepq1")
 
 [node name="Shirt" type="Sprite2D" parent="CompositeSprites"]

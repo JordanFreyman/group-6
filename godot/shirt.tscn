@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ce6vyeysd5c34" path="res://Art/pixil-layer-eyes1.png" id="7_8uuxn"]
 [ext_resource type="Texture2D" uid="uid://df24j0b8f5dyw" path="res://Art/pixil-layer-nose1.png" id="8_jexbi"]
 [ext_resource type="Texture2D" uid="uid://cdvfkjqe50phk" path="res://Art/pixil-layer-mouth1.png" id="9_6wre5"]
-[ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="11_h7uq3"]
+[ext_resource type="Texture2D" uid="uid://c33xg1gtkb8cb" path="res://Art/pixil-layer-hair 1.png" id="10_0tee2"]
 [ext_resource type="Texture2D" uid="uid://bclwu6e63qb8p" path="res://Art/pixil-layer-pants.png" id="11_ltv28"]
 [ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="12_mg5oa"]
 [ext_resource type="Texture2D" uid="uid://ca0twlpybk0ix" path="res://arrow.png" id="13_ov5no"]
@@ -43,49 +43,6 @@ offset_top = 75.0
 offset_right = 958.0
 offset_bottom = 1040.0
 texture = ExtResource("3_mk2gj")
-
-[node name="CompositeSprites" type="Node2D" parent="."]
-position = Vector2(0, -13.425)
-script = ExtResource("4_6bndq")
-
-[node name="Head" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(421, 450.212)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("5_lrfkn")
-
-[node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(421.772, 434.142)
-texture = ExtResource("6_u1mok")
-
-[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(422.563, 478.563)
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("7_8uuxn")
-
-[node name="Nose" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(421.508, 478.022)
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("8_jexbi")
-
-[node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(421.913, 457.717)
-scale = Vector2(1.15, 1.15)
-texture = ExtResource("9_6wre5")
-
-[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(418.668, 332.158)
-scale = Vector2(2, 2)
-texture = ExtResource("11_h7uq3")
-
-[node name="Pants" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(420.3, 443.99)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("11_ltv28")
-
-[node name="Shirt" type="Sprite2D" parent="CompositeSprites"]
-position = Vector2(420.357, 456.107)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("5_4wi7o")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
@@ -162,6 +119,49 @@ offset_bottom = 411.5
 rotation = 1.5708
 texture = ExtResource("13_ov5no")
 expand_mode = 1
+
+[node name="CompositeSprites" type="Node2D" parent="."]
+position = Vector2(0, -13.425)
+script = ExtResource("4_6bndq")
+
+[node name="Head" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421, 450.212)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("5_lrfkn")
+
+[node name="Eyebrows" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.772, 434.142)
+texture = ExtResource("6_u1mok")
+
+[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(422.563, 478.563)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("7_8uuxn")
+
+[node name="Nose" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.508, 478.022)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("8_jexbi")
+
+[node name="Mouth" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(421.913, 457.717)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("9_6wre5")
+
+[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(420.668, 446.573)
+scale = Vector2(1.06, 1.06)
+texture = ExtResource("10_0tee2")
+
+[node name="Pants" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(420.555, 445.44)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("11_ltv28")
+
+[node name="Shirt" type="Sprite2D" parent="CompositeSprites"]
+position = Vector2(420.357, 456.107)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_4wi7o")
 
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]
 [connection signal="child_entered_tree" from="VSlider" to="." method="_on_v_slider_child_entered_tree"]
