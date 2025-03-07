@@ -54,6 +54,8 @@ func _ready():
 	if "width_scale" in menu_params:
 		shirtSprite.scale.x = menu_params["width_scale"]
 		pantsSprite.scale.x = menu_params["width_scale"]
+		
+	
 
 # Function to update all sprite textures based on menu_params
 func update_sprites():
@@ -65,6 +67,13 @@ func update_sprites():
 	hairSprite.texture = $CompositeSprites.hair_spritesheet[menu_params["currHair"]]
 	noseSprite.texture = $CompositeSprites.nose_spritesheet[menu_params["currNose"]]
 	mouthSprite.texture = $CompositeSprites.mouth_spritesheet[menu_params["currMouth"]]
+	
+	if "currHead_color" in menu_params:
+		headSprite.modulate = menu_params["currHead_color"]
+	if "currShirt_color" in menu_params:
+		shirtSprite.modulate = menu_params["currShirt_color"]
+	if "currMouth_color" in menu_params:
+		mouthSprite.modulate = menu_params["currMouth_color"]
 
 # Generic function for setting a sprite index
 func set_feature(feature: String, index: int):
@@ -227,3 +236,17 @@ func _on_width_value_changed(value: float) -> void:
 	shirtSprite.scale.x = value
 	pantsSprite.scale.x = value
 	menu_params["width_scale"] = shirtSprite.scale.x
+
+
+
+func _on_color_picker_head_color_changed(color: Color) -> void:
+	headSprite.modulate = color
+	menu_params["currHead_color"] = color
+
+func _on_color_picker_shirt_color_changed(color: Color) -> void:
+	shirtSprite.modulate = color
+	menu_params["currShirt_color"] = color
+
+func _on_color_picker_mouth_color_changed(color: Color) -> void:
+	mouthSprite.modulate = color
+	menu_params["currMouth_color"] = color

@@ -83,6 +83,22 @@ layout_mode = 2
 theme = ExtResource("10_n0wv4")
 text = "Mouth"
 
+[node name="ColorPickerHead" type="ColorPickerButton" parent="Menu/MarginContainer/VBoxContainer"]
+modulate = Color(0.415686, 1, 1, 1)
+layout_mode = 2
+text = "Head Color picker
+"
+
+[node name="Color PickerShirt" type="ColorPickerButton" parent="Menu/MarginContainer/VBoxContainer"]
+modulate = Color(0.415686, 1, 1, 1)
+layout_mode = 2
+color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[node name="ColorPickerMouth" type="ColorPickerButton" parent="Menu/MarginContainer/VBoxContainer"]
+modulate = Color(0.415686, 1, 1, 1)
+layout_mode = 2
+color = Color(0.211765, 0.239216, 0.290196, 1)
+
 [node name="Done" type="Button" parent="Menu"]
 layout_mode = 1
 anchors_preset = -1
@@ -147,4 +163,7 @@ texture = ExtResource("11_7itku")
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewHair" to="." method="_on_view_hair_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewNose" to="." method="_on_view_nose_pressed"]
 [connection signal="pressed" from="Menu/MarginContainer/VBoxContainer/ViewMouth" to="." method="_on_view_mouth_pressed"]
+[connection signal="color_changed" from="Menu/MarginContainer/VBoxContainer/ColorPickerHead" to="." method="_on_color_picker_head_color_changed"]
+[connection signal="color_changed" from="Menu/MarginContainer/VBoxContainer/Color PickerShirt" to="." method="_on_color_picker_shirt_color_changed"]
+[connection signal="color_changed" from="Menu/MarginContainer/VBoxContainer/ColorPickerMouth" to="." method="_on_color_picker_mouth_color_changed"]
 [connection signal="pressed" from="Menu/Done" to="." method="_on_done_pressed"]
