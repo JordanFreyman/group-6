@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://dccmxcw3371ev"]
+
+[ext_resource type="Shader" path="res://scroll.gdshader" id="1_es0yd"]
+[ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="2_8lk4q"]
+[ext_resource type="Theme" uid="uid://b0pvqp6xocvys" path="res://DemoSprites/main.tres" id="3_1mosw"]
+[ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="4_2gw37"]
+[ext_resource type="Script" path="res://game_start_button.gd" id="5_juvov"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0l4ba"]
+shader = ExtResource("1_es0yd")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_0l4ba")
+layout_mode = 2
+offset_right = 1916.0
+offset_bottom = 1071.0
+texture = ExtResource("2_8lk4q")
+
+[node name="GridContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 37.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme = ExtResource("3_1mosw")
+text = "The Game"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="TextureRect/GridContainer"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 200)
+layout_mode = 2
+
+[node name="Start" type="Button" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("4_2gw37")
+theme_override_font_sizes/font_size = 100
+text = "Start Game"
+script = ExtResource("5_juvov")
+
+[connection signal="pressed" from="TextureRect/GridContainer/Start" to="TextureRect/GridContainer/Start" method="_on_pressed"]
