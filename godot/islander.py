@@ -73,6 +73,7 @@
 
 import sys
 import json
+import os
 
 class Islander:
     def __init__(self, name, pronouns, appearance):
@@ -96,15 +97,29 @@ if __name__ == "__main__":
 
     char_name = sys.argv[1]
     char_pronouns = sys.argv[2]
-    menu_params_raw = sys.argv[3]
+    menu_params_path = sys.argv[3]
 
-    print("Raw menu_params:", menu_params_raw, file=sys.stderr)  # Debugging line
+    if menu_params_path.startswith("user://"):
+        godot_user_path = os.getenv("APPDATA") + "/Godot/app_userdata/group6/"
+        menu_params_path = menu_params_path.replace("user://", godot_user_path)
 
     try:
-        menu_params = json.loads(menu_params_raw)  # Convert JSON string to dictionary
-    except json.JSONDecodeError as e:
-        sys.stderr.write(f"JSON decode error: {e}\n")
+        with open(menu_params_path, 'r') as f:
+            menu_params = json.load(f)
+    except Exception as e:
+        sys.stderr.write(f"Failed to read JSON file: {e}\n")
         sys.exit(1)
+
+
+    # menu_params_raw = sys.argv[3]
+
+    # print("Raw menu_params:", menu_params_raw, file=sys.stderr)  # Debugging line
+
+    # try:
+    #     menu_params = json.loads(menu_params_raw)  # Convert JSON string to dictionary
+    # except json.JSONDecodeError as e:
+    #     sys.stderr.write(f"JSON decode error: {e}\n")
+    #     sys.exit(1)
 
     islander = Islander(char_name, char_pronouns, menu_params)
     
