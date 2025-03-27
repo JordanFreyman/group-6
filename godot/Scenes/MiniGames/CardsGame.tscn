@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfs0linlirn5s"]
+[gd_scene load_steps=15 format=3 uid="uid://dfs0linlirn5s"]
 
 [ext_resource type="Shader" path="res://scroll.gdshader" id="1_1fxu1"]
+[ext_resource type="Script" path="res://Scenes/MiniGames/cards_game.gd" id="1_2p0hy"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_je6o0"]
 [ext_resource type="Texture2D" uid="uid://b16r4fbdlntpg" path="res://Art/pixil-layer-head.png" id="3_y84a4"]
 [ext_resource type="Texture2D" uid="uid://ditrnph5kfv6t" path="res://Art/pixil-layer-eyebrows1.png" id="4_grff1"]
@@ -19,6 +20,7 @@ shader = ExtResource("1_1fxu1")
 load_path = "res://.godot/imported/background.jpg-4bc9a541f6da27f3cededdbd4eab4156.ctex"
 
 [node name="CardsGame" type="Node2D"]
+script = ExtResource("1_2p0hy")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 texture_repeat = 2
@@ -28,6 +30,7 @@ offset_bottom = 1071.0
 texture = SubResource("CompressedTexture2D_s7dlv")
 
 [node name="ColorRect" type="ColorRect" parent="TextureRect2"]
+layout_mode = 0
 offset_right = 1921.0
 offset_bottom = 1083.0
 color = Color(0.427451, 0.384314, 0.215686, 0.886275)

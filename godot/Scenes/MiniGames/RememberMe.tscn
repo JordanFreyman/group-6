@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddd1ntrr606kc"]
+[gd_scene load_steps=15 format=3 uid="uid://ddd1ntrr606kc"]
 
 [ext_resource type="Shader" path="res://scroll.gdshader" id="1_asyba"]
+[ext_resource type="Script" path="res://Scenes/MiniGames/remember_me.gd" id="1_cmtwc"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_xsehx"]
 [ext_resource type="Texture2D" uid="uid://b16r4fbdlntpg" path="res://Art/pixil-layer-head.png" id="3_dvake"]
 [ext_resource type="Texture2D" uid="uid://ditrnph5kfv6t" path="res://Art/pixil-layer-eyebrows1.png" id="4_xmgvm"]
@@ -19,6 +20,7 @@ shader = ExtResource("1_asyba")
 load_path = "res://.godot/imported/background.jpg-4bc9a541f6da27f3cededdbd4eab4156.ctex"
 
 [node name="RememberMe" type="Node2D"]
+script = ExtResource("1_cmtwc")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 texture_repeat = 2
@@ -28,6 +30,7 @@ offset_bottom = 1071.0
 texture = SubResource("CompressedTexture2D_6v2dp")
 
 [node name="ColorRect" type="ColorRect" parent="TextureRect2"]
+layout_mode = 0
 offset_right = 1921.0
 offset_bottom = 1083.0
 color = Color(0.427451, 0.384314, 0.215686, 0.886275)
@@ -84,12 +87,10 @@ offset_bottom = 950.0
 scale = Vector2(4.57772, 3.47368)
 theme = ExtResource("11_a5du3")
 
-[node name="Label" type="Label" parent="TextureRect2/ColorRect"]
-layout_mode = 0
+[node name="Label" type="Label" parent="."]
 offset_left = 222.0
 offset_top = 840.0
 offset_right = 818.0
 offset_bottom = 1129.0
 scale = Vector2(0.578939, 0.544003)
 theme = ExtResource("11_a5du3")
-text = "kjgjh"
