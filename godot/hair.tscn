@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://ditrnph5kfv6t" path="res://Art/pixil-layer-eyebrows1.png" id="6_u3m0f"]
 [ext_resource type="Texture2D" uid="uid://ce6vyeysd5c34" path="res://Art/pixil-layer-eyes1.png" id="7_00k76"]
 [ext_resource type="Texture2D" uid="uid://df24j0b8f5dyw" path="res://Art/pixil-layer-nose1.png" id="8_blnt3"]
-[ext_resource type="Texture2D" uid="uid://dwn5pgjum2eq7" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_3yd8x"]
+[ext_resource type="Texture2D" path="res://Art/CompositeSpriteSheets/Hair1.png" id="9_3yd8x"]
 [ext_resource type="Texture2D" uid="uid://cdvfkjqe50phk" path="res://Art/pixil-layer-mouth1.png" id="9_4k2pv"]
 [ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_4nx3f"]
-[ext_resource type="Texture2D" uid="uid://dh11bdn7qliyc" path="res://Art/CompositeSpriteSheets/Hair2.png" id="10_i54w4"]
+[ext_resource type="Texture2D" path="res://Art/CompositeSpriteSheets/Hair2.png" id="10_i54w4"]
 [ext_resource type="Texture2D" uid="uid://bclwu6e63qb8p" path="res://Art/pixil-layer-pants.png" id="13_d7wln"]
 [ext_resource type="Texture2D" uid="uid://c33xg1gtkb8cb" path="res://Art/pixil-layer-hair 1.png" id="13_sebbo"]
 

@@ -166,4 +166,5 @@ texture = ExtResource("5_w4b5r")
 [connection signal="item_selected" from="Menu/MarginContainer/VBoxContainer/Pronouns" to="." method="_on_pronouns_item_selected"]
 [connection signal="tree_entered" from="Menu/MarginContainer/VBoxContainer/Pronouns" to="." method="_on_pronouns_tree_entered"]
 [connection signal="focus_entered" from="Menu/Label" to="." method="_on_label_focus_entered"]
+[connection signal="pressed" from="Menu/Done" to="." method="_on_done2_pressed"]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]
