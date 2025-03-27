@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bujiraqff0334"]
+[gd_scene load_steps=17 format=3 uid="uid://bujiraqff0334"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_pwsg3"]
 [ext_resource type="Script" path="res://composite_sprites.gd" id="2_gycy1"]
@@ -8,11 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://b16r4fbdlntpg" path="res://Art/pixil-layer-head.png" id="6_wpfyg"]
 [ext_resource type="Texture2D" uid="uid://ditrnph5kfv6t" path="res://Art/pixil-layer-eyebrows1.png" id="7_eoufa"]
 [ext_resource type="Texture2D" uid="uid://ce6vyeysd5c34" path="res://Art/pixil-layer-eyes1.png" id="8_02l6h"]
-[ext_resource type="Texture2D" uid="uid://c3l18r0xcr67m" path="res://Art/CompositeSpriteSheets/Eyebrows1.png" id="9_10iab"]
 [ext_resource type="Texture2D" uid="uid://df24j0b8f5dyw" path="res://Art/pixil-layer-nose1.png" id="9_kh3ij"]
 [ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_fiyd2"]
 [ext_resource type="Texture2D" uid="uid://cdvfkjqe50phk" path="res://Art/pixil-layer-mouth1.png" id="10_hxfnr"]
-[ext_resource type="Texture2D" uid="uid://x6kx7rftbrqh" path="res://Art/CompositeSpriteSheets/Eyebrows2.png" id="10_o7jat"]
+[ext_resource type="Texture2D" uid="uid://crvrmnj2nf72" path="res://Art/pixil-layer-eyebrows2.png" id="10_o7jat"]
 [ext_resource type="Texture2D" uid="uid://c33xg1gtkb8cb" path="res://Art/pixil-layer-hair 1.png" id="13_a27sb"]
 [ext_resource type="Texture2D" uid="uid://bclwu6e63qb8p" path="res://Art/pixil-layer-pants.png" id="14_fepq1"]
 
@@ -68,7 +67,7 @@ offset_bottom = 160.88
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme = ExtResource("10_fiyd2")
-icon = ExtResource("9_10iab")
+icon = ExtResource("7_eoufa")
 icon_alignment = 1
 expand_icon = true
 
@@ -133,6 +132,4 @@ position = Vector2(420.357, 456.107)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_8jfjo")
 
-[connection signal="pressed" from="Menu/GridContainer/Eyebrows1" to="." method="_on_eyebrows_selected" binds= [0]]
-[connection signal="pressed" from="Menu/GridContainer/Eyebrows2" to="." method="_on_eyebrows_selected" binds= [1]]
 [connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]

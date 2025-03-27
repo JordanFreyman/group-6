@@ -1,5 +1,10 @@
 extends Node2D
 
+var project_dir = "C:/Users/jfrey/Documents/GitHub/group-6/godot"  # Set your actual project path
+var interpreter_path = project_dir.path_join("venv/Scripts/python.exe")
+var script_path = project_dir.path_join("islander.py")
+
+
 signal menu_changed(menu_name)
 
 @onready var headSprite = $CompositeSprites/Head
@@ -39,6 +44,17 @@ func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pr
 	char_pronouns = new_char_pronouns
 
 func _ready():
+	print("Python Interpreter Path:", interpreter_path)
+	print("Script Path:", script_path)
+	var output = []
+	OS.execute(interpreter_path, ["--version"], output, true)
+	print("Python Test Output:", output)
+	
+	
+	if !OS.has_feature("standalone"):
+		interpreter_path = ProjectSettings.globalize_path("res://venv/Scripts/python.exe")
+		script_path = ProjectSettings.globalize_path("res://islander.py")
+	notify("title", "subtitle", "body")
 	update_sprites()
 	if "height_scale" in menu_params:
 		shirtSprite.scale.y = menu_params["height_scale"]
@@ -56,6 +72,9 @@ func _ready():
 		pantsSprite.scale.x = menu_params["width_scale"]
 		
 	
+
+func notify(title = "", subtitle = "", body = ""):
+	OS.execute(interpreter_path, [script_path, title, subtitle, body])
 
 # Function to update all sprite textures based on menu_params
 func update_sprites():
@@ -238,7 +257,6 @@ func _on_width_value_changed(value: float) -> void:
 	menu_params["width_scale"] = shirtSprite.scale.x
 
 
-
 func _on_color_picker_head_color_changed(color: Color) -> void:
 	headSprite.modulate = color
 	menu_params["currHead_color"] = color
@@ -250,3 +268,61 @@ func _on_color_picker_shirt_color_changed(color: Color) -> void:
 func _on_color_picker_mouth_color_changed(color: Color) -> void:
 	mouthSprite.modulate = color
 	menu_params["currMouth_color"] = color
+
+func _on_done2_pressed() -> void:
+	var py_script = "islander.py"
+	var json_string = JSON.stringify(menu_params)  # This ensures correct JSON formatting
+	print("Formatted JSON string:", json_string)
+	#json_string = json_string.replace("\\", "")
+	var json = JSON.new()  # Create an instance of the JSON class
+	var error = json.parse(json_string)
+	var parsed_result = json.get_data()
+	var command = []
+	if error == OK:
+		command = ["python", py_script, char_name, str(char_pronouns), json_string]  # Pass the json_string directly
+	else:
+		print("Failed to parse JSON!")
+	#var command = ["python", "islander.py",char_name, str(char_pronouns), json_string]
+	command[4] = command[4].replace("\\","")
+	print(json_string)
+	print("Executing command:", command)
+	var output = []
+	var exit_code = OS.execute("python", command, output, true)
+
+
+
+	# Run the Python script
+	#OS.execute("python3", [py_script] + args, output, true)
+	
+	if output.size() > 0 and exit_code == 0:
+		var raw_output = output[0].strip_edges()  # Renamed json_string to raw_output
+		print("Raw Python output:", raw_output)  # Debugging step
+		
+		var json_instance = JSON.new()
+		var error_code = json_instance.parse(raw_output)  # Parse JSON string
+		
+		if error_code == OK:
+			var islander_data = json_instance.data
+			print("Created new islander: ", islander_data)
+			
+			# Add islander data to the global list
+			Global.islanders.append(islander_data)
+			
+			switch_to = "demoMap"
+			emit_signal("menu_changed", menu_name)
+			
+			# Switch to demoMap and pass the islander data
+			var demo_map_scene = load("res://demoMap.tscn").instantiate()
+			get_tree().root.add_child(demo_map_scene)
+			
+			# Ensure islander_data has the expected keys before accessing them
+			if "menu_params" in islander_data and "char_name" in islander_data and "char_pronouns" in islander_data:
+				demo_map_scene.load_params(islander_data["menu_params"], islander_data["char_name"], islander_data["char_pronouns"])
+			else:
+				print("Error: Missing expected keys in islander_data:", islander_data)
+			
+			print("islanders list: ", Global.islanders)
+		else:
+			print("JSON parse error:", json_instance.get_error_message())
+	else:
+		print("No output from Python script")

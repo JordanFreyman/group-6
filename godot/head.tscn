@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ditrnph5kfv6t" path="res://Art/pixil-layer-eyebrows1.png" id="6_mcql1"]
 [ext_resource type="Texture2D" uid="uid://ce6vyeysd5c34" path="res://Art/pixil-layer-eyes1.png" id="7_5hckf"]
 [ext_resource type="Texture2D" uid="uid://df24j0b8f5dyw" path="res://Art/pixil-layer-nose1.png" id="8_7aoqm"]
-[ext_resource type="Texture2D" uid="uid://dsqmxnmltxw67" path="res://Art/CompositeSpriteSheets/Head1.png" id="9_i4eqi"]
+[ext_resource type="Texture2D" path="res://Art/CompositeSpriteSheets/Head1.png" id="9_i4eqi"]
 [ext_resource type="Texture2D" uid="uid://cdvfkjqe50phk" path="res://Art/pixil-layer-mouth1.png" id="9_sseq8"]
 [ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="10_5r58s"]
 [ext_resource type="Texture2D" uid="uid://c33xg1gtkb8cb" path="res://Art/pixil-layer-hair 1.png" id="12_ya0ve"]
