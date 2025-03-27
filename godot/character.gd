@@ -257,8 +257,6 @@ func _on_width_value_changed(value: float) -> void:
 	menu_params["width_scale"] = shirtSprite.scale.x
 
 
-<<<<<<< Updated upstream
-
 func _on_color_picker_head_color_changed(color: Color) -> void:
 	headSprite.modulate = color
 	menu_params["currHead_color"] = color
@@ -270,7 +268,7 @@ func _on_color_picker_shirt_color_changed(color: Color) -> void:
 func _on_color_picker_mouth_color_changed(color: Color) -> void:
 	mouthSprite.modulate = color
 	menu_params["currMouth_color"] = color
-=======
+
 func _on_done2_pressed() -> void:
 	var py_script = "islander.py"
 	var json_string = JSON.stringify(menu_params)  # This ensures correct JSON formatting
@@ -328,4 +326,3 @@ func _on_done2_pressed() -> void:
 			print("JSON parse error:", json_instance.get_error_message())
 	else:
 		print("No output from Python script")
->>>>>>> Stashed changes

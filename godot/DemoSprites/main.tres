@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b0pvqp6xocvys"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://uqfkp5mtnw1d"]
 
 [ext_resource type="FontFile" uid="uid://b7khg6kpj3vr7" path="res://Themes/AmericanTypewriter.ttc" id="1_cy4c6"]
 [ext_resource type="StyleBox" uid="uid://dn4kxhxtreg17" path="res://Themes/purpleButton.tres" id="2_f8oo0"]
