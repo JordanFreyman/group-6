@@ -92,7 +92,7 @@ if __name__ == "__main__":
     print("Arguments received:", sys.argv, file=sys.stderr)  # Debugging output
 
     if len(sys.argv) < 4:
-        sys.stderr.write("Error: Insufficient arguments\n")
+        print("Error: Insufficient arguments", file=sys.stderr)
         sys.exit(1)
 
     char_name = sys.argv[1]

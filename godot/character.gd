@@ -270,7 +270,7 @@ func _on_color_picker_mouth_color_changed(color: Color) -> void:
 	menu_params["currMouth_color"] = color
 
 func _on_done2_pressed() -> void:
-	var py_script = "islander.py"
+	var py_script = ProjectSettings.globalize_path("res://islander.py")
 	var json_string = JSON.stringify(menu_params)  # This ensures correct JSON formatting
 	var local_path = "user://params.json"
 	var file_path = ProjectSettings.globalize_path(local_path)  # Get absolute path
@@ -283,13 +283,16 @@ func _on_done2_pressed() -> void:
 		print("failed to open file for writing")
 		return
 	
-	var command = ["python", py_script, char_name, str(char_pronouns), file_path]
+	var command = [py_script, char_name, str(char_pronouns), file_path]
 
 	print("executing command: ", command)
-	
 	var output = []
-	var exit_code = OS.execute("python", command, output, true)
-	
+	var stderr_output = []
+	var exit_code = OS.execute("python", command, output, false) 
+	print("STDOUT:\n", output)
+	print("STDERR:\n", stderr_output)
+	print("Exit code: ", exit_code)
+
 	if output.size() > 0 and exit_code == 0:
 		var raw_output = output[0].strip_edges()
 		print("raw python output: ", raw_output)
