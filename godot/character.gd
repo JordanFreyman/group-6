@@ -272,9 +272,10 @@ func _on_color_picker_mouth_color_changed(color: Color) -> void:
 func _on_done2_pressed() -> void:
 	var py_script = "islander.py"
 	var json_string = JSON.stringify(menu_params)  # This ensures correct JSON formatting
-	
-	var file_path = "user://params.json"
-	var file = FileAccess.open(file_path, FileAccess.WRITE)
+	var local_path = "user://params.json"
+	var file_path = ProjectSettings.globalize_path(local_path)  # Get absolute path
+	var file = FileAccess.open(local_path, FileAccess.WRITE)  # Still write to "user://"
+
 	if file:
 		file.store_string(json_string)
 		file.close()
@@ -283,7 +284,7 @@ func _on_done2_pressed() -> void:
 		return
 	
 	var command = ["python", py_script, char_name, str(char_pronouns), file_path]
-	
+
 	print("executing command: ", command)
 	
 	var output = []
