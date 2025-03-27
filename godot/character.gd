@@ -307,10 +307,11 @@ func _on_done2_pressed() -> void:
 			get_tree().root.add_child(demo_map_scene)
 			
 			if "menu_params" in islander_data and "char_name" in islander_data and "char_pronouns" in islander_data:
+				char_pronouns = int(char_pronouns)
 				demo_map_scene.load_params(
 					islander_data["menu_params"],
 					islander_data["char_name"],
-					islander_data["char_pronouns"]
+					int(islander_data["char_pronouns"])
 				)
 			else:
 				print("missing keys in islander_data: ", islander_data)
@@ -318,58 +319,4 @@ func _on_done2_pressed() -> void:
 			print("JSON parse error: ", json_instance.get_error_message())
 	else:
 		print("no output from python script, or script failed")
-	#
-	#print("Formatted JSON string:", json_string)
-	##json_string = json_string.replace("\\", "")
-	#var json = JSON.new()  # Create an instance of the JSON class
-	#var error = json.parse(json_string)
-	#var parsed_result = json.get_data()
-	#var command = []
-	#if error == OK:
-		#command = ["python", py_script, char_name, str(char_pronouns), json_string]  # Pass the json_string directly
-	#else:
-		#print("Failed to parse JSON!")
-	##var command = ["python", "islander.py",char_name, str(char_pronouns), json_string]
-	#command[4] = command[4].replace("\\","")
-	#print(json_string)
-	#print("Executing command:", command)
-	#var output = []
-	#var exit_code = OS.execute("python", command, output, true)
-#
-#
-#
-	## Run the Python script
-	##OS.execute("python3", [py_script] + args, output, true)
-	#
-	#if output.size() > 0 and exit_code == 0:
-		#var raw_output = output[0].strip_edges()  # Renamed json_string to raw_output
-		#print("Raw Python output:", raw_output)  # Debugging step
-		#
-		#var json_instance = JSON.new()
-		#var error_code = json_instance.parse(raw_output)  # Parse JSON string
-		#
-		#if error_code == OK:
-			#var islander_data = json_instance.data
-			#print("Created new islander: ", islander_data)
-			#
-			## Add islander data to the global list
-			#Global.islanders.append(islander_data)
-			#
-			#switch_to = "demoMap"
-			#emit_signal("menu_changed", menu_name)
-			#
-			## Switch to demoMap and pass the islander data
-			#var demo_map_scene = load("res://demoMap.tscn").instantiate()
-			#get_tree().root.add_child(demo_map_scene)
-			#
-			## Ensure islander_data has the expected keys before accessing them
-			#if "menu_params" in islander_data and "char_name" in islander_data and "char_pronouns" in islander_data:
-				#demo_map_scene.load_params(islander_data["menu_params"], islander_data["char_name"], islander_data["char_pronouns"])
-			#else:
-				#print("Error: Missing expected keys in islander_data:", islander_data)
-			#
-			#print("islanders list: ", Global.islanders)
-		#else:
-			#print("JSON parse error:", json_instance.get_error_message())
-	#else:
-		#print("No output from Python script")
+	#print(Global.islanders.char_name) !!NEXT STEP is to be able to do this

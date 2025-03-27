@@ -18,7 +18,7 @@ func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pr
 
 func _ready() -> void:
 	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
