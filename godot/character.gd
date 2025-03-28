@@ -44,6 +44,7 @@ func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pr
 	char_pronouns = new_char_pronouns
 
 func _ready():
+	Music.play_music("res://Music/chicken dance song.mp3")
 	print("Python Interpreter Path:", interpreter_path)
 	print("Script Path:", script_path)
 	var output = []
@@ -117,64 +118,92 @@ func set_feature(feature: String, index: int):
 
 
 func _on_view_head_pressed():
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	switch_to = "head"
 	emit_signal("menu_changed", menu_name)
+	
 
 func _on_view_shirt_pressed():
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	switch_to = "shirt"
 	emit_signal("menu_changed", menu_name)
 
 func _on_view_eyebrows_pressed():
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	switch_to = "eyebrows"
 	emit_signal("menu_changed", menu_name)
 
+
 func _on_view_eyes_pressed():
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	switch_to = "eyes"
 	emit_signal("menu_changed", menu_name)
 
+
 func _on_view_hair_pressed():
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	switch_to = "hair"
 	emit_signal("menu_changed", menu_name)
 
+
 func _on_view_nose_pressed():
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	switch_to = "nose"
 	emit_signal("menu_changed", menu_name)
 
 func _on_view_mouth_pressed():
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	switch_to = "mouth"
 	emit_signal("menu_changed", menu_name)
 
 func _on_back_pressed():
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	switch_to = "character"
 	emit_signal("menu_changed", menu_name)
 
 func _on_head_selected(index: int):
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	set_feature("currHead", index)
 
+
 func _on_shirt_selected(index: int):
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	set_feature("currShirt", index)
 
+
 func _on_eyebrows_selected(index: int):
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	set_feature("currEyebrows", index)
+
 
 # Eyes selection function (applies to all eye buttons)
 func _on_eyes_selected(index: int):
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	set_feature("currEyes", index)
+
 
 # Hair selection function (applies to all hair buttons)
 func _on_hair_selected(index: int):
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	set_feature("currHair", index)
 
+
 func _on_nose_selected(index: int):
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	set_feature("currNose", index)
 
+
 func _on_mouth_selected(index: int):
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	set_feature("currMouth", index)
 
 
+
 func _on_done_pressed() -> void:
+	Sound.play_sfx("res://Music/weee.mp3")
 	switch_to = "info_menu"
 	emit_signal("menu_changed", menu_name)
+	#_play_click_sound()
 
 
 func _on_name_text_submitted(new_text: String) -> void:
