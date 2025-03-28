@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://h01s7414h6qy"]
+[gd_scene load_steps=16 format=3 uid="uid://h01s7414h6qy"]
 
 [ext_resource type="Script" path="res://Scenes/MiniGames/rizz_game.gd" id="1_gaepx"]
 [ext_resource type="Shader" path="res://scroll.gdshader" id="1_lhsul"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bclwu6e63qb8p" path="res://Art/pixil-layer-pants.png" id="9_a1465"]
 [ext_resource type="Texture2D" uid="uid://yci1xnevwubf" path="res://Art/pixil-layer-shirt.png" id="10_w5ebe"]
 [ext_resource type="Theme" uid="uid://ckbw6cxunlmkc" path="res://Themes/chat.tres" id="11_hkoc1"]
+[ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="13_sw6d6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iotl5"]
 shader = ExtResource("1_lhsul")
@@ -25,7 +26,8 @@ script = ExtResource("1_gaepx")
 [node name="TextureRect2" type="TextureRect" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_iotl5")
-offset_right = 1916.0
+offset_left = -3.0
+offset_right = 1913.0
 offset_bottom = 1071.0
 texture = SubResource("CompressedTexture2D_dqhy5")
 
@@ -37,22 +39,22 @@ color = Color(0.427451, 0.384314, 0.215686, 0.505882)
 
 [node name="Label" type="Label" parent="TextureRect2"]
 layout_mode = 0
-offset_left = 415.0
-offset_top = 199.0
-offset_right = 2288.0
-offset_bottom = 333.0
+offset_left = 312.0
+offset_top = 98.0
+offset_right = 2185.0
+offset_bottom = 232.0
 scale = Vector2(0.578939, 0.544003)
 theme = ExtResource("11_hkoc1")
 theme_override_font_sizes/font_size = 100
 text = "Hey! You wanted to tell me something?"
 
 [node name="CompositeSprites" type="Node2D" parent="TextureRect2"]
-position = Vector2(-593, -392)
+position = Vector2(-634, -431)
 scale = Vector2(1.89886, 1.76213)
 script = ExtResource("2_inief")
 
 [node name="Head" type="Sprite2D" parent="TextureRect2/CompositeSprites"]
-position = Vector2(421, 450.212)
+position = Vector2(422.359, 455.131)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("3_hxlpg")
 
@@ -76,7 +78,7 @@ scale = Vector2(1.15, 1.15)
 texture = ExtResource("7_5x01o")
 
 [node name="Hair" type="Sprite2D" parent="TextureRect2/CompositeSprites"]
-position = Vector2(420.668, 446.573)
+position = Vector2(421.305, 444.916)
 scale = Vector2(1.06, 1.06)
 texture = ExtResource("8_rnhh2")
 
@@ -90,29 +92,58 @@ position = Vector2(420.357, 456.107)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("10_w5ebe")
 
-[node name="MenuButton" type="MenuButton" parent="TextureRect2"]
-layout_mode = 0
-offset_left = 1286.0
-offset_top = 695.0
-offset_right = 1303.0
-offset_bottom = 726.0
+[node name="Label2" type="Label" parent="."]
+offset_left = 313.0
+offset_top = 182.0
+offset_right = 847.0
+offset_bottom = 241.0
+scale = Vector2(0.578939, 0.544003)
+theme = ExtResource("11_hkoc1")
+theme_override_font_sizes/font_size = 50
+text = "Relationship Points: 24"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 596.0
+offset_right = 575.0
+offset_bottom = 655.0
+scale = Vector2(0.578939, 0.544003)
+theme = ExtResource("11_hkoc1")
+theme_override_font_sizes/font_size = 50
+text = "PeoplePerson"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 465.0
+offset_top = 313.0
+offset_right = 1465.0
+offset_bottom = 673.0
+scale = Vector2(1.34851, 1.40466)
+theme = ExtResource("11_hkoc1")
+
+[node name="MenuButton" type="MenuButton" parent="."]
+offset_left = 535.0
+offset_top = 325.0
+offset_right = 1737.0
+offset_bottom = 704.0
 scale = Vector2(1.0351, 1.27941)
 theme = ExtResource("11_hkoc1")
-text = "__________"
+text = "uygthjk"
+alignment = 0
+autowrap_mode = 3
 switch_on_hover = true
-item_count = 3
-popup/item_0/text = "Banana"
-popup/item_1/text = "Wet Sock"
-popup/item_1/id = 1
-popup/item_2/text = "Rainbow"
-popup/item_2/id = 2
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 414.0
-offset_top = 706.0
-offset_right = 1509.0
-offset_bottom = 995.0
-scale = Vector2(0.329931, 0.372869)
-theme = ExtResource("11_hkoc1")
-text = "Are you?
-"
+[node name="return" type="Button" parent="."]
+custom_minimum_size = Vector2(15, 15)
+offset_left = 1618.0
+offset_top = 943.0
+offset_right = 1855.0
+offset_bottom = 1038.0
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("13_sw6d6")
+theme_override_font_sizes/font_size = 40
+text = "Return"
+
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]

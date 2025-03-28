@@ -9,7 +9,8 @@ var character_name = "Alice"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Label.text = "Hello, " + character_name + "!"
+	$Label.text = "Hello! Can you help me remember the name of this townmember?"
+	
 
 
 
