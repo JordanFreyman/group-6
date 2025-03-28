@@ -17,7 +17,6 @@ func handle_menu_changed(current_menu_name: String):
 		#_:
 			#return
 	var next_menu_name = current_menu.switch_to
-			
 	var temp = load("res://"+next_menu_name+".tscn")
 	next_menu = temp.instantiate()
 	

@@ -319,4 +319,4 @@ func _on_done2_pressed() -> void:
 			print("JSON parse error: ", json_instance.get_error_message())
 	else:
 		print("no output from python script, or script failed")
-	#print(Global.islanders.char_name) !!NEXT STEP is to be able to do this
+	print(Global.islanders[Global.islanders.size()-1]) #!!NEXT STEP is to be able to do this

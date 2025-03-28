@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyvs30qjeiowh"]
+
+[ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="1_nevjs"]
+
+[node name="Homes" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1909.0
+offset_bottom = 1074.0
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(987.5, 564.5)
+scale = Vector2(3.74023, 2.27148)
+texture = ExtResource("1_nevjs")

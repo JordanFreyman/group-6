@@ -3,7 +3,9 @@ extends Node2D
 var menu_params: Dictionary = {}
 var char_name: String = ""
 var char_pronouns: int = 0
-
+@export var menu_name = "menu"
+@export var switch_to: String
+signal menu_changed(menu_name)
 
 func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pronouns: int):
 	menu_params = new_menu_params
@@ -18,8 +20,28 @@ func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pr
 
 func _ready() -> void:
 	pass # Replace with function body.
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func switch_scene(target_scene: String):
+	var new_scene = load(target_scene)
+	if new_scene:
+		get_tree().change_scene_to_packed(new_scene)
+	else:
+		print("Error: Could not load scene " + target_scene)
+
+
+func _on_homes_pressed() -> void:
+	switch_scene("res://homes.tscn")
+	#switch_to = "homes"
+	#emit_signal("menu_changed", menu_name)
+
+
+func _on_food_pressed() -> void:
+	switch_scene("res://food.tscn")
+
+
+func _on_town_hall_pressed() -> void:
+	switch_scene("res://town-hall.tscn")

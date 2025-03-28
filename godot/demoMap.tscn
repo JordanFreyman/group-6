@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://btmhbjdhch10r"]
+[gd_scene load_steps=3 format=3 uid="uid://btmhbjdhch10r"]
 
 [ext_resource type="Script" path="res://demo_map.gd" id="1_f3ojc"]
-[ext_resource type="Texture2D" uid="uid://leyfg5wggtxk" path="res://DemoSprites/demoMap.jpg" id="1_wsx3c"]
-[ext_resource type="Texture2D" uid="uid://bqi5xycw7ukoa" path="res://icon.svg" id="2_k8t8a"]
-[ext_resource type="Theme" uid="uid://cjib8vu7cprxw" path="res://Themes/testTheme.tres" id="3_xpv2i"]
+[ext_resource type="Texture2D" uid="uid://j6134ft728hu" path="res://Art/my_beautiful_map.png" id="2_r00ft"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 5)
@@ -13,48 +11,26 @@ script = ExtResource("1_f3ojc")
 position = Vector2(958, 535)
 
 [node name="DemoMap" type="Sprite2D" parent="."]
-position = Vector2(967, 539)
-scale = Vector2(1.87891, 1.40495)
-texture = ExtResource("1_wsx3c")
+position = Vector2(957, 539.03)
+scale = Vector2(1.00833, 1.03524)
+texture = ExtResource("2_r00ft")
 
-[node name="pointsCanvas" type="CanvasLayer" parent="."]
+[node name="homes" type="Button" parent="."]
+offset_left = 583.0
+offset_top = 199.0
+offset_right = 1377.0
+offset_bottom = 720.0
 
-[node name="PanelContainer" type="PanelContainer" parent="pointsCanvas"]
-offset_left = 1646.0
-offset_top = 940.0
-offset_right = 1903.0
-offset_bottom = 1068.0
+[node name="food" type="Button" parent="."]
+offset_left = 160.0
+offset_top = 500.0
+offset_right = 532.0
+offset_bottom = 899.0
 
-[node name="GridContainer" type="GridContainer" parent="pointsCanvas/PanelContainer"]
-layout_mode = 2
-columns = 2
+[node name="town hall" type="Button" parent="."]
+offset_left = 1478.0
+offset_top = 436.0
+offset_right = 1859.0
+offset_bottom = 854.0
 
-[node name="TextureRect" type="TextureRect" parent="pointsCanvas/PanelContainer/GridContainer"]
-layout_mode = 2
-texture = ExtResource("2_k8t8a")
-
-[node name="name" type="Label" parent="pointsCanvas/PanelContainer/GridContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Godot Points"
-
-[node name="points" type="Label" parent="pointsCanvas/PanelContainer/GridContainer/name"]
-layout_mode = 2
-offset_left = 15.0
-offset_top = 38.0
-offset_right = 122.0
-offset_bottom = 64.0
-theme_override_font_sizes/font_size = 18
-text = "500"
-
-[node name="ButtonCanvas" type="CanvasLayer" parent="."]
-
-[node name="Button" type="Button" parent="ButtonCanvas"]
-offset_left = 472.0
-offset_top = 980.0
-offset_right = 875.0
-offset_bottom = 1071.0
-theme = ExtResource("3_xpv2i")
-theme_override_font_sizes/font_size = 50
-text = "Start Game
-"
+[connection signal="pressed" from="homes" to="." method="_on_homes_pressed"]
