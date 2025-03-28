@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pv2hbjsellxc"
+path="res://.godot/imported/chicken dance song.mp3-92158370dfc57e586496c24e87d3cdb2.mp3str"
+
+[deps]
+
+source_file="res://Music/chicken dance song.mp3"
+dest_files=["res://.godot/imported/chicken dance song.mp3-92158370dfc57e586496c24e87d3cdb2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

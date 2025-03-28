@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://Global.gd"
+Sound="*res://SoundManager.tscn"
+Music="*res://musicmanager.tscn"
 
 [display]
 

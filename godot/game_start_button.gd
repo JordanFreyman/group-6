@@ -15,8 +15,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+	
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	pass
+	 # Replace with function body.
 	#when 'start' button pressed, check if game has existing save data. if there is none, redirect player to character.tscn to create their first character and enable tutorial popups.
 	#if there IS currently save data that exists, then redirect user to the main map where the gameplay takes place.
