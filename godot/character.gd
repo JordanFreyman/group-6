@@ -200,7 +200,7 @@ func _on_mouth_selected(index: int):
 
 
 func _on_done_pressed() -> void:
-	Sound.play_sfx("res://Music/weee.mp3")
+	Sound.play_sfx("res://Music/audio-editor-output (2).mp3")
 	switch_to = "info_menu"
 	emit_signal("menu_changed", menu_name)
 	#_play_click_sound()
@@ -297,8 +297,12 @@ func _on_color_picker_shirt_color_changed(color: Color) -> void:
 func _on_color_picker_mouth_color_changed(color: Color) -> void:
 	mouthSprite.modulate = color
 	menu_params["currMouth_color"] = color
+	
+
 
 func _on_done2_pressed() -> void:
+	Sound.play_sfx("res://Music/weee.mp3")
+	Music.play_music("res://Music/Eek!.mp3")
 	var py_script = ProjectSettings.globalize_path("res://islander.py")
 	var json_string = JSON.stringify(menu_params)  # This ensures correct JSON formatting
 	var local_path = "user://params.json"
