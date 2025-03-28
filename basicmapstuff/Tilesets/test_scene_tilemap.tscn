@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=4 uid="uid://djoxpcpr3lu2f"]
+[gd_scene load_steps=9 format=4 uid="uid://djoxpcpr3lu2f"]
 
 [ext_resource type="TileSet" uid="uid://yshglnd37tdp" path="res://Tilesets/game_tile_set.tres" id="1_nbd7e"]
 [ext_resource type="Script" path="res://Tilesets/camera_2d.gd" id="2_1ph4m"]
+[ext_resource type="Texture2D" uid="uid://cr0pl1imvwges" path="res://Assets For Project/Town Hall.png" id="3_tde23"]
+[ext_resource type="Texture2D" uid="uid://bep1jvcjnk8q" path="res://Assets For Project/Town Hall Hover.png" id="5_8c10h"]
+[ext_resource type="Texture2D" uid="uid://crn5krg1dit45" path="res://Assets For Project/Food Stall.png" id="6_1vr5p"]
+[ext_resource type="Script" path="res://Tilesets/texture_button.gd" id="6_grans"]
+[ext_resource type="Texture2D" uid="uid://cwekoh1jjige2" path="res://Assets For Project/food stall hover.png" id="7_8ue3y"]
+[ext_resource type="Script" path="res://Tilesets/texture_button_2.gd" id="8_kk7kv"]
 
 [node name="TestSceneTilemap" type="Node2D"]
 
@@ -32,3 +38,24 @@ tile_set = ExtResource("1_nbd7e")
 position = Vector2(395, 322)
 zoom = Vector2(1.75, 1.75)
 script = ExtResource("2_1ph4m")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 152.0
+offset_top = 250.0
+offset_right = 280.0
+offset_bottom = 378.0
+texture_normal = ExtResource("3_tde23")
+texture_hover = ExtResource("5_8c10h")
+script = ExtResource("6_grans")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 530.0
+offset_top = 118.0
+offset_right = 658.0
+offset_bottom = 246.0
+texture_normal = ExtResource("6_1vr5p")
+texture_hover = ExtResource("7_8ue3y")
+script = ExtResource("8_kk7kv")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="TextureButton2" to="TextureButton2" method="_on_pressed"]
