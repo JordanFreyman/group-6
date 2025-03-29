@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://btmhbjdhch10r"]
+[gd_scene load_steps=4 format=3 uid="uid://btmhbjdhch10r"]
 
 [ext_resource type="Script" path="res://demo_map.gd" id="1_f3ojc"]
 [ext_resource type="Texture2D" uid="uid://j6134ft728hu" path="res://Art/my_beautiful_map.png" id="2_r00ft"]
+[ext_resource type="Script" path="res://welcome_panel.gd" id="3_ym660"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 5)
@@ -32,5 +33,26 @@ offset_left = 1478.0
 offset_top = 436.0
 offset_right = 1859.0
 offset_bottom = 854.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WelcomePanel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ym660")
+
+[node name="Label" type="Label" parent="CanvasLayer/WelcomePanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 50
+
+[node name="ContinueLabel" type="Label" parent="CanvasLayer/WelcomePanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="homes" to="." method="_on_homes_pressed"]
