@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://btmhbjdhch10r"]
+[gd_scene load_steps=13 format=4 uid="uid://btmhbjdhch10r"]
 
 [ext_resource type="Script" path="res://demo_map.gd" id="1_f3ojc"]
 [ext_resource type="TileSet" uid="uid://btlr1pcwncbe3" path="res://game_tile_set.tres" id="2_7c8ga"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dqwpujc4mba00" path="res://Art/Town Hall Hover.png" id="7_1glcq"]
 [ext_resource type="Texture2D" uid="uid://dwe44k40l3qr6" path="res://Art/home.png" id="8_riilj"]
 [ext_resource type="Texture2D" uid="uid://c354nu61yg8ir" path="res://Art/home hover.png" id="9_7eq5g"]
+[ext_resource type="Texture2D" uid="uid://s5oh0t07fshm" path="res://Art/tree.png" id="12_iuk1v"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 5)
@@ -36,6 +37,84 @@ visible = false
 position = Vector2(957, 539.03)
 scale = Vector2(1.00833, 1.03524)
 texture = ExtResource("2_r00ft")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Tree" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(-169, 817)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree9" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(316, 1031)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree10" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1677, 727)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree18" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1525, 836)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree19" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1473, 993)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree11" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1891, 693)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree12" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1758, 860)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree13" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1605, 965)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree17" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1786, 989)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree14" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1972, 836)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree8" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1938, 993)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(235, 1131)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree3" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(-12, 865)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree4" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(106, 959)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree5" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(-154, 1012)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree6" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(36, 1107)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree15" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(98, 1174)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree16" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(398, 1160)
+texture = ExtResource("12_iuk1v")
+
+[node name="Tree7" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(-131, 1169)
+texture = ExtResource("12_iuk1v")
 
 [node name="food2" type="TextureButton" parent="."]
 offset_left = 59.0
