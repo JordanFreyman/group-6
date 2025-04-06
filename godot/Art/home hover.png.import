@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7stplyhgp0t8"
-path="res://.godot/imported/tree.png-76ce03248e1ad47d7e08342070bb0617.ctex"
+uid="uid://c354nu61yg8ir"
+path="res://.godot/imported/home hover.png-7a9dd0432b803ba2e7c72959c5fb0a65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets For Project/tree.png"
-dest_files=["res://.godot/imported/tree.png-76ce03248e1ad47d7e08342070bb0617.ctex"]
+source_file="res://Art/home hover.png"
+dest_files=["res://.godot/imported/home hover.png-7a9dd0432b803ba2e7c72959c5fb0a65.ctex"]
 
 [params]
 

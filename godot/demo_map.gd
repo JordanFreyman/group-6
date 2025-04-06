@@ -33,15 +33,15 @@ func switch_scene(target_scene: String):
 		print("Error: Could not load scene " + target_scene)
 
 
-func _on_homes_pressed() -> void:
-	switch_scene("res://homes.tscn")
-	#switch_to = "homes"
-	#emit_signal("menu_changed", menu_name)
-
-
-func _on_food_pressed() -> void:
+func _on_food_2_pressed() -> void:
 	switch_scene("res://food.tscn")
 
 
-func _on_town_hall_pressed() -> void:
+func _on_town_hall_2_pressed() -> void:
 	switch_scene("res://town-hall.tscn")
+
+
+func _on_homes_2_pressed() -> void:
+	switch_scene("res://homes.tscn")
+	#switch_to = "homes"
+	#emit_signal("menu_changed", menu_name)

@@ -1,12 +1,12 @@
 extends Camera2D
 
-const MOVE_SPEED = 200  # Adjust the speed as needed
+const MOVE_SPEED = 200  
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # You can add any initialization code here if needed
+	pass 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_left"):
 		global_position += Vector2.LEFT * delta * MOVE_SPEED

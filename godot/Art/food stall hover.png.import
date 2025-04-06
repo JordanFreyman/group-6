@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr0pl1imvwges"
-path="res://.godot/imported/Town Hall.png-0692c7956b13173836e107e25816b968.ctex"
+uid="uid://hwyrggx165ae"
+path="res://.godot/imported/food stall hover.png-74405cb0a829b18ee1dd9dc73870e533.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets For Project/Town Hall.png"
-dest_files=["res://.godot/imported/Town Hall.png-0692c7956b13173836e107e25816b968.ctex"]
+source_file="res://Art/food stall hover.png"
+dest_files=["res://.godot/imported/food stall hover.png-74405cb0a829b18ee1dd9dc73870e533.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlsphbbsej6nq"
-path="res://.godot/imported/decor1.png-274a334b9c6adb342d48ad61d774ac5f.ctex"
+uid="uid://o5sc0isumjjt"
+path="res://.godot/imported/Water.png-ccc605df2696771fdc6098b87a5fd6c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets For Project/decor1.png"
-dest_files=["res://.godot/imported/decor1.png-274a334b9c6adb342d48ad61d774ac5f.ctex"]
+source_file="res://Art/Water.png"
+dest_files=["res://.godot/imported/Water.png-ccc605df2696771fdc6098b87a5fd6c3.ctex"]
 
 [params]
 

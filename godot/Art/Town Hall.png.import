@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du7vq51f7ic3i"
-path="res://.godot/imported/GrassBits.png-f431d8eb3fdb6f9243a4c2f895c10079.ctex"
+uid="uid://f75n5mk45k3g"
+path="res://.godot/imported/Town Hall.png-e15d08ff2ec325f23850a0051d1916c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets For Project/GrassBits.png"
-dest_files=["res://.godot/imported/GrassBits.png-f431d8eb3fdb6f9243a4c2f895c10079.ctex"]
+source_file="res://Art/Town Hall.png"
+dest_files=["res://.godot/imported/Town Hall.png-e15d08ff2ec325f23850a0051d1916c6.ctex"]
 
 [params]
 

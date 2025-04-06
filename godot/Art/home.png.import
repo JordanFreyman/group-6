@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crn5krg1dit45"
-path="res://.godot/imported/Food Stall.png-c6b44345b4a6d61e5c05371cef1bbcff.ctex"
+uid="uid://dwe44k40l3qr6"
+path="res://.godot/imported/home.png-f49d3f486a1fb64a17a237ba9303ede7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets For Project/Food Stall.png"
-dest_files=["res://.godot/imported/Food Stall.png-c6b44345b4a6d61e5c05371cef1bbcff.ctex"]
+source_file="res://Art/home.png"
+dest_files=["res://.godot/imported/home.png-f49d3f486a1fb64a17a237ba9303ede7.ctex"]
 
 [params]
 
