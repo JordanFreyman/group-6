@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://btmhbjdhch10r"]
+[gd_scene load_steps=14 format=4 uid="uid://btmhbjdhch10r"]
 
 [ext_resource type="Script" path="res://demo_map.gd" id="1_f3ojc"]
 [ext_resource type="TileSet" uid="uid://btlr1pcwncbe3" path="res://game_tile_set.tres" id="2_7c8ga"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://welcome_panel.gd" id="3_ym660"]
 [ext_resource type="Texture2D" uid="uid://bhd8thqn3edwv" path="res://Art/Food Stall.png" id="4_8dg3x"]
 [ext_resource type="Texture2D" uid="uid://hwyrggx165ae" path="res://Art/food stall hover.png" id="5_g26v4"]
+[ext_resource type="Texture2D" uid="uid://deiu6vwwhbwyn" path="res://Art/appletree.png" id="6_085f0"]
 [ext_resource type="Texture2D" uid="uid://f75n5mk45k3g" path="res://Art/Town Hall.png" id="6_jrd4p"]
 [ext_resource type="Texture2D" uid="uid://dqwpujc4mba00" path="res://Art/Town Hall Hover.png" id="7_1glcq"]
 [ext_resource type="Texture2D" uid="uid://dwe44k40l3qr6" path="res://Art/home.png" id="8_riilj"]
@@ -30,6 +31,7 @@ tile_set = ExtResource("2_7c8ga")
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 position = Vector2(958, 535)
+zoom = Vector2(0.6, 0.6)
 script = ExtResource("3_1xjaf")
 
 [node name="DemoMap" type="Sprite2D" parent="."]
@@ -58,7 +60,7 @@ texture = ExtResource("12_iuk1v")
 
 [node name="Tree19" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(1473, 993)
-texture = ExtResource("12_iuk1v")
+texture = ExtResource("6_085f0")
 
 [node name="Tree11" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(1891, 693)
@@ -66,7 +68,7 @@ texture = ExtResource("12_iuk1v")
 
 [node name="Tree12" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(1758, 860)
-texture = ExtResource("12_iuk1v")
+texture = ExtResource("6_085f0")
 
 [node name="Tree13" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(1605, 965)
@@ -86,7 +88,7 @@ texture = ExtResource("12_iuk1v")
 
 [node name="Tree2" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(235, 1131)
-texture = ExtResource("12_iuk1v")
+texture = ExtResource("6_085f0")
 
 [node name="Tree3" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(-12, 865)
@@ -98,7 +100,7 @@ texture = ExtResource("12_iuk1v")
 
 [node name="Tree5" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(-154, 1012)
-texture = ExtResource("12_iuk1v")
+texture = ExtResource("6_085f0")
 
 [node name="Tree6" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(36, 1107)
