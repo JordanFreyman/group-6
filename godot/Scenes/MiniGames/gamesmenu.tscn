@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dghbuyb5hvmei"]
+[gd_scene load_steps=11 format=3 uid="uid://dghbuyb5hvmei"]
 
 [ext_resource type="Script" path="res://Scenes/MiniGames/gamesmenu.gd" id="1_5gjwl"]
 [ext_resource type="Shader" path="res://scroll.gdshader" id="1_hfn3k"]
 [ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="2_a1hap"]
-[ext_resource type="Texture2D" uid="uid://3lhdhnmxwx10" path="res://Art/fillersmaller.png" id="3_jhuk1"]
+[ext_resource type="Texture2D" uid="uid://d222ha22upcx4" path="res://Art/cards.png" id="4_t1m5b"]
+[ext_resource type="Texture2D" uid="uid://b2e1p4w0kilvn" path="res://Art/cardshover.png" id="5_0ng3v"]
+[ext_resource type="Texture2D" uid="uid://bp3qmaorla1ui" path="res://Art/cloud.png" id="5_l0xve"]
+[ext_resource type="Texture2D" uid="uid://djv7gdjbc5s41" path="res://Art/cloudhover.png" id="6_150hl"]
+[ext_resource type="Texture2D" uid="uid://33xtg2t2snjx" path="res://Art/heart.png" id="8_vxcjx"]
+[ext_resource type="Texture2D" uid="uid://d0uyhyg4mbra2" path="res://Art/hearthover.png" id="9_t30vc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l8sb5"]
 shader = ExtResource("1_hfn3k")
@@ -24,53 +29,61 @@ position = Vector2(482, 535)
 zoom = Vector2(2, 2)
 
 [node name="CardsGame" type="TextureButton" parent="."]
-offset_left = 66.0
-offset_top = 389.0
-offset_right = 322.0
-offset_bottom = 645.0
-texture_normal = ExtResource("3_jhuk1")
+offset_left = 56.0
+offset_top = 394.0
+offset_right = 312.0
+offset_bottom = 650.0
+texture_normal = ExtResource("4_t1m5b")
+texture_hover = ExtResource("5_0ng3v")
 
 [node name="Label" type="Label" parent="CardsGame"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 101.0
-offset_right = 202.0
-offset_bottom = 170.0
-theme_override_font_sizes/font_size = 50
+offset_left = 85.0
+offset_top = -19.0
+offset_right = 223.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
 text = "Cards"
 
 [node name="RememberMe" type="TextureButton" parent="."]
-offset_left = 348.0
-offset_top = 389.0
-offset_right = 604.0
-offset_bottom = 645.0
-texture_normal = ExtResource("3_jhuk1")
+offset_left = 359.0
+offset_top = 411.0
+offset_right = 615.0
+offset_bottom = 667.0
+texture_normal = ExtResource("5_l0xve")
+texture_hover = ExtResource("6_150hl")
 
 [node name="Label" type="Label" parent="RememberMe"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 80.0
-offset_right = 270.0
-offset_bottom = 221.0
-theme_override_font_sizes/font_size = 50
-text = "Remember
-Me"
+offset_left = -5.0
+offset_top = -29.0
+offset_right = 262.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "Remember Me"
 horizontal_alignment = 1
 
 [node name="RizzGame" type="TextureButton" parent="."]
-offset_left = 644.0
-offset_top = 391.0
-offset_right = 900.0
-offset_bottom = 647.0
-texture_normal = ExtResource("3_jhuk1")
+offset_left = 648.0
+offset_top = 408.0
+offset_right = 904.0
+offset_bottom = 664.0
+texture_normal = ExtResource("8_vxcjx")
+texture_hover = ExtResource("9_t30vc")
 
 [node name="Label" type="Label" parent="RizzGame"]
 layout_mode = 0
-offset_left = 89.0
-offset_top = 101.0
-offset_right = 183.0
-offset_bottom = 170.0
-theme_override_font_sizes/font_size = 50
+offset_left = 95.0
+offset_top = -25.0
+offset_right = 189.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
 text = "Rizz"
 
 [connection signal="pressed" from="CardsGame" to="." method="_on_cards_game_pressed"]
