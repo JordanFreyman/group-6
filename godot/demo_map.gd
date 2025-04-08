@@ -45,3 +45,7 @@ func _on_homes_2_pressed() -> void:
 	switch_scene("res://homes.tscn")
 	#switch_to = "homes"
 	#emit_signal("menu_changed", menu_name)
+
+
+func _on_minigames_pressed() -> void:
+	switch_scene("res://Scenes/MiniGames/gamesmenu.tscn")

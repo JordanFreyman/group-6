@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://dghbuyb5hvmei"]
+
+[ext_resource type="Script" path="res://Scenes/MiniGames/gamesmenu.gd" id="1_5gjwl"]
+[ext_resource type="Shader" path="res://scroll.gdshader" id="1_hfn3k"]
+[ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="2_a1hap"]
+[ext_resource type="Texture2D" uid="uid://3lhdhnmxwx10" path="res://Art/fillersmaller.png" id="3_jhuk1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l8sb5"]
+shader = ExtResource("1_hfn3k")
+
+[node name="Gamesmenu" type="Node2D"]
+script = ExtResource("1_5gjwl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_l8sb5")
+offset_left = 1.0
+offset_right = 966.0
+offset_bottom = 965.0
+texture = ExtResource("2_a1hap")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(482, 535)
+zoom = Vector2(2, 2)
+
+[node name="CardsGame" type="TextureButton" parent="."]
+offset_left = 66.0
+offset_top = 389.0
+offset_right = 322.0
+offset_bottom = 645.0
+texture_normal = ExtResource("3_jhuk1")
+
+[node name="Label" type="Label" parent="CardsGame"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 101.0
+offset_right = 202.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 50
+text = "Cards"
+
+[node name="RememberMe" type="TextureButton" parent="."]
+offset_left = 348.0
+offset_top = 389.0
+offset_right = 604.0
+offset_bottom = 645.0
+texture_normal = ExtResource("3_jhuk1")
+
+[node name="Label" type="Label" parent="RememberMe"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 80.0
+offset_right = 270.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 50
+text = "Remember
+Me"
+horizontal_alignment = 1
+
+[node name="RizzGame" type="TextureButton" parent="."]
+offset_left = 644.0
+offset_top = 391.0
+offset_right = 900.0
+offset_bottom = 647.0
+texture_normal = ExtResource("3_jhuk1")
+
+[node name="Label" type="Label" parent="RizzGame"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 101.0
+offset_right = 183.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 50
+text = "Rizz"
+
+[connection signal="pressed" from="CardsGame" to="." method="_on_cards_game_pressed"]
+[connection signal="pressed" from="RememberMe" to="." method="_on_remember_me_pressed"]
+[connection signal="pressed" from="RizzGame" to="." method="_on_rizz_game_pressed"]

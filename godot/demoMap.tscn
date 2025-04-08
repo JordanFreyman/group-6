@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://btmhbjdhch10r"]
+[gd_scene load_steps=15 format=4 uid="uid://btmhbjdhch10r"]
 
 [ext_resource type="Script" path="res://demo_map.gd" id="1_f3ojc"]
 [ext_resource type="TileSet" uid="uid://btlr1pcwncbe3" path="res://game_tile_set.tres" id="2_7c8ga"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dwe44k40l3qr6" path="res://Art/home.png" id="8_riilj"]
 [ext_resource type="Texture2D" uid="uid://c354nu61yg8ir" path="res://Art/home hover.png" id="9_7eq5g"]
 [ext_resource type="Texture2D" uid="uid://s5oh0t07fshm" path="res://Art/tree.png" id="12_iuk1v"]
+[ext_resource type="Texture2D" uid="uid://b4x4kw24ige5o" path="res://Art/filler.png" id="13_vucup"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 5)
@@ -119,10 +120,10 @@ position = Vector2(-131, 1169)
 texture = ExtResource("12_iuk1v")
 
 [node name="food2" type="TextureButton" parent="."]
-offset_left = 59.0
-offset_top = -5.0
-offset_right = 571.0
-offset_bottom = 507.0
+offset_left = -64.0
+offset_top = -60.0
+offset_right = 448.0
+offset_bottom = 452.0
 texture_normal = ExtResource("4_8dg3x")
 texture_hover = ExtResource("5_g26v4")
 
@@ -136,10 +137,10 @@ theme_override_font_sizes/font_size = 100
 text = "FOOD"
 
 [node name="town hall2" type="TextureButton" parent="."]
-offset_left = 677.0
-offset_top = 481.0
-offset_right = 1189.0
-offset_bottom = 993.0
+offset_left = 601.0
+offset_top = -9.0
+offset_right = 1113.0
+offset_bottom = 503.0
 texture_normal = ExtResource("6_jrd4p")
 texture_hover = ExtResource("7_1glcq")
 
@@ -169,9 +170,26 @@ offset_bottom = 645.0
 theme_override_font_sizes/font_size = 100
 text = "HOMES"
 
+[node name="minigames" type="TextureButton" parent="."]
+offset_left = 503.0
+offset_top = 720.0
+offset_right = 1015.0
+offset_bottom = 1232.0
+texture_normal = ExtResource("13_vucup")
+
+[node name="Label" type="Label" parent="minigames"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 454.0
+offset_right = 418.0
+offset_bottom = 591.0
+theme_override_font_sizes/font_size = 100
+text = "GAMES"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="WelcomePanel" type="Panel" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -194,3 +212,4 @@ offset_bottom = 23.0
 [connection signal="pressed" from="food2" to="." method="_on_food_2_pressed"]
 [connection signal="pressed" from="town hall2" to="." method="_on_town_hall_2_pressed"]
 [connection signal="pressed" from="homes2" to="." method="_on_homes_2_pressed"]
+[connection signal="pressed" from="minigames" to="." method="_on_minigames_pressed"]
