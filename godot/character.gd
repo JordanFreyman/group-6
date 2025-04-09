@@ -322,13 +322,13 @@ func _on_done2_pressed() -> void:
 	var output = []
 	var stderr_output = []
 	var exit_code = OS.execute("python", command, output, false) 
-	print("STDOUT:\n", output)
-	print("STDERR:\n", stderr_output)
-	print("Exit code: ", exit_code)
+	#print("STDOUT:\n", output)
+	#print("STDERR:\n", stderr_output)
+	#print("Exit code: ", exit_code)
 
 	if output.size() > 0 and exit_code == 0:
 		var raw_output = output[0].strip_edges()
-		print("raw python output: ", raw_output)
+		#print("raw python output: ", raw_output)
 		var json_instance = JSON.new()
 		var error_code = json_instance.parse(raw_output)
 		
@@ -352,4 +352,7 @@ func _on_done2_pressed() -> void:
 			print("JSON parse error: ", json_instance.get_error_message())
 	else:
 		print("no output from python script, or script failed")
-	print(Global.islanders[Global.islanders.size()-1]) #!!NEXT STEP is to be able to do this
+	#print(Global.islanders[Global.islanders.size()-1]) #!!NEXT STEP is to be able to do this
+	print(Global.islanders)
+	#for islander in Global.islanders:
+		#print(islander["char_name"])

@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1740764450
+icon.svg::CompressedTexture2D::7741488737515927163::1740764403::1740764452::1::::<><>::
+::res://Assets For Project/::1740764403
+decor1.png::CompressedTexture2D::7969421441011294158::1740764403::1740764452::1::::<><>::
+GrassBits.png::CompressedTexture2D::8630404257656114472::1740764403::1740764452::1::::<><>::
+tree.png::CompressedTexture2D::7057224188306293315::1740764403::1740764452::1::::<><>::
+Water.png::CompressedTexture2D::4565119014087791983::1740764403::1740764452::1::::<><>::
+::res://Tilesets/::1740764403
+camera_2d.gd::GDScript::-1::1740764403::0::1::::<>Camera2D<>::
+game_tile_set.tres::TileSet::1722127378612960289::1740764403::0::1::::<><>::uid://b6bm3wyy4wm3h::::res://Assets For Project/Water.png<>uid://du7vq51f7ic3i::::res://Assets For Project/GrassBits.png<>uid://c7stplyhgp0t8::::res://Assets For Project/tree.png<>uid://dlsphbbsej6nq::::res://Assets For Project/decor1.png
+test_scene_tilemap.tscn::PackedScene::7821286339149676131::1740764403::0::1::::<><>::uid://yshglnd37tdp::::res://Tilesets/game_tile_set.tres<>res://Tilesets/camera_2d.gd

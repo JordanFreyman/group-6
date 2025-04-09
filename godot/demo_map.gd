@@ -13,8 +13,8 @@ func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pr
 	char_pronouns = new_char_pronouns
 
 	# Insert the islander into the islanders[] list (assuming it's managed globally)
-	Global.islanders.append({"name": char_name, "pronouns": char_pronouns, "appearance": menu_params})
-	print("Islander added:", Global.islanders)
+	#Global.islanders.append({"name": char_name, "pronouns": char_pronouns, "appearance": menu_params})
+	#print("Islander added:", Global.islanders)
 #ok cool it works now, but no data is being transferred. the goal is to have it so that when _on_done2_pressed() from character.gd is called,
 #all the parameters get passed in through here, and that islander is created into an Islander object and inserted into the islanders[] list.
 

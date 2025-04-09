@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyvs30qjeiowh"]
+[gd_scene load_steps=3 format=3 uid="uid://cyvs30qjeiowh"]
 
-[ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="1_nevjs"]
+[ext_resource type="Script" path="res://homes.gd" id="1_2p3c0"]
+[ext_resource type="Texture2D" uid="uid://0qy81t8n6jbm" path="res://Art/homes_bg.png" id="1_bvwil"]
 
 [node name="Homes" type="Node2D"]
+script = ExtResource("1_2p3c0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1909.0
@@ -11,4 +13,4 @@ offset_bottom = 1074.0
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(987.5, 564.5)
 scale = Vector2(3.74023, 2.27148)
-texture = ExtResource("1_nevjs")
+texture = ExtResource("1_bvwil")
