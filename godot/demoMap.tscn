@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=4 uid="uid://btmhbjdhch10r"]
 
 [ext_resource type="Script" path="res://demo_map.gd" id="1_f3ojc"]
-[ext_resource type="TileSet" uid="uid://btlr1pcwncbe3" path="res://game_tile_set.tres" id="2_7c8ga"]
+[ext_resource type="TileSet" uid="uid://daxle2jjhdlxd" path="res://game_tile_set.tres" id="2_7c8ga"]
 [ext_resource type="Texture2D" uid="uid://j6134ft728hu" path="res://Art/my_beautiful_map.png" id="2_r00ft"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="3_1xjaf"]
 [ext_resource type="Script" path="res://welcome_panel.gd" id="3_ym660"]
