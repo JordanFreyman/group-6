@@ -37,11 +37,13 @@ var pronouns = {
 	1: ["she", "her", "her", "hers", "herself"],
 	2: ["they", "them", "their", "theirs", "themselves"]
 }
+var house_num : int
 
-func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pronouns: int):
+func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pronouns: int, new_house_num: int):
 	menu_params = new_menu_params
 	char_name = new_char_name
 	char_pronouns = new_char_pronouns
+	house_num = new_house_num
 
 func _ready():
 	Global.load_islanders()
@@ -51,7 +53,19 @@ func _ready():
 	var output = []
 	OS.execute(interpreter_path, ["--version"], output, true)
 	print("Python Test Output:", output)
-	
+	#if no islanders, just assign any house number
+	if Global.islanders.size() == 0 or Global.islanders.size() > 11:
+		house_num = randi_range(1, 11)
+	#otherwise, choose a random number in the range that isn't currently in use
+	else:
+		var num_list = []
+		for i in range(Global.islanders.size()):
+			num_list.append(Global.islanders[i][house_num])
+		var found = false
+		while not found:
+			house_num = randi_range(1, 11)
+			if not house_num in num_list:
+				found = true
 	
 	if !OS.has_feature("standalone"):
 		interpreter_path = ProjectSettings.globalize_path("res://venv/Scripts/python.exe")
@@ -317,7 +331,7 @@ func _on_done2_pressed() -> void:
 		print("failed to open file for writing")
 		return
 	
-	var command = [py_script, char_name, str(char_pronouns), file_path]
+	var command = [py_script, char_name, str(char_pronouns), str(house_num), file_path]
 
 	print("executing command: ", command)
 	var output = []
@@ -340,12 +354,13 @@ func _on_done2_pressed() -> void:
 			var demo_map_scene = load("res://demoMap.tscn").instantiate()
 			get_tree().root.add_child(demo_map_scene)
 			
-			if "menu_params" in islander_data and "char_name" in islander_data and "char_pronouns" in islander_data:
+			if "menu_params" in islander_data and "char_name" in islander_data and "char_pronouns" in islander_data and "house_num" in islander_data:
 				char_pronouns = int(char_pronouns)
 				demo_map_scene.load_params(
 					islander_data["menu_params"],
 					islander_data["char_name"],
-					int(islander_data["char_pronouns"])
+					int(islander_data["char_pronouns"]),
+					int(islander_data["house_num"])
 				)
 			else:
 				print("missing keys in islander_data: ", islander_data)

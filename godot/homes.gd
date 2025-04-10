@@ -6,7 +6,8 @@ func _ready() -> void:
 	for i in range(Global.islanders.size()):
 		var islander_name = Global.islanders[i]["char_name"]
 		var texture_rect = TextureRect.new()
-		texture_rect.texture = preload("res://Art/house.png")
+		var house_number = Global.islanders[i]["house_num"]
+		texture_rect.texture = load("res://Art/house" + str(house_number) + ".png")
 		texture_rect.position = Vector2(600 * i, 0)
 		homes_node.add_child(texture_rect)
 
@@ -15,7 +16,7 @@ func _ready() -> void:
 		name_label.label_settings = LabelSettings.new()
 		name_label.label_settings.font_size = 60
 		name_label.label_settings.font_color = "BLACK"
-		name_label.position = Vector2(texture_rect.position.x + 100, texture_rect.position.y + texture_rect.get_rect().size.y - 100)
+		name_label.position = Vector2(texture_rect.position.x + 100, texture_rect.position.y + texture_rect.get_rect().size.y)
 		homes_node.add_child(name_label)
 
 

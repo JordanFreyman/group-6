@@ -76,15 +76,17 @@ import json
 import os
 
 class Islander:
-    def __init__(self, name, pronouns, appearance):
+    def __init__(self, name, pronouns, house_num, appearance):
         self.name = name
         self.pronouns = pronouns
+        self.house_num = house_num
         self.appearance = appearance
 
     def to_dict(self):
         return {
             "char_name": self.name,
             "char_pronouns": self.pronouns,
+            "house_num": self.house_num,
             "menu_params": self.appearance
         }
 
@@ -97,7 +99,8 @@ if __name__ == "__main__":
 
     char_name = sys.argv[1]
     char_pronouns = sys.argv[2]
-    menu_params_path = sys.argv[3]
+    house_num = sys.argv[3]
+    menu_params_path = sys.argv[4]
 
     if menu_params_path.startswith("user://"):
         godot_user_path = os.getenv("APPDATA") + "/Godot/app_userdata/group6/"
@@ -121,7 +124,7 @@ if __name__ == "__main__":
     #     sys.stderr.write(f"JSON decode error: {e}\n")
     #     sys.exit(1)
 
-    islander = Islander(char_name, char_pronouns, menu_params)
+    islander = Islander(char_name, char_pronouns, house_num ,menu_params)
     
     # Ensure JSON output is the only thing written to stdout
     sys.stdout.write(json.dumps(islander.to_dict()))
