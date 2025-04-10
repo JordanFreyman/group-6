@@ -22,3 +22,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_back_pressed() -> void:
+	var demo_map_scene = load("res://demoMap.tscn").instantiate()
+	get_tree().root.add_child(demo_map_scene)
+	pass # Replace with function body.

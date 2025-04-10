@@ -44,6 +44,7 @@ func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pr
 	char_pronouns = new_char_pronouns
 
 func _ready():
+	Global.load_islanders()
 	Music.play_music("res://Music/chicken dance song.mp3")
 	print("Python Interpreter Path:", interpreter_path)
 	print("Script Path:", script_path)

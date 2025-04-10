@@ -14,3 +14,12 @@ offset_bottom = 1074.0
 position = Vector2(987.5, 564.5)
 scale = Vector2(3.74023, 2.27148)
 texture = ExtResource("1_bvwil")
+
+[node name="Back" type="Button" parent="."]
+offset_left = 83.0
+offset_top = 846.0
+offset_right = 333.0
+offset_bottom = 955.0
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
