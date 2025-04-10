@@ -3,7 +3,7 @@ extends Node2D
 var menu_params: Dictionary = {}
 var char_name: String = ""
 var char_pronouns: int = 0
-@export var menu_name = "menu"
+@export var menu_name = "demoMap"
 @export var switch_to: String
 signal menu_changed(menu_name)
 
