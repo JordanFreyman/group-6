@@ -56,26 +56,21 @@ func switch_scene(target_scene: String):
 
 
 func _on_food_2_pressed() -> void:
-	switch_scene("res://food.tscn")
-
+	switch_scene("res://Scense/MiniGames/FeedMe.tscn")
 
 func _on_town_hall_2_pressed() -> void:
 	switch_scene("res://town-hall.tscn")
-
 
 func _on_homes_2_pressed() -> void:
 	switch_scene("res://homes.tscn")
 	#switch_to = "homes"
 	#emit_signal("menu_changed", menu_name)
 
-
 func _on_minigames_pressed() -> void:
 	switch_scene("res://Scenes/MiniGames/gamesmenu.tscn")
 
-
 func _on_save_pressed() -> void:
 	save_islanders()
-
 
 func _on_delete_pressed() -> void:
 	Global.delete_save_file()
