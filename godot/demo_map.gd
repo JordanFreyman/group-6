@@ -3,6 +3,7 @@ extends Node2D
 var menu_params: Dictionary = {}
 var char_name: String = ""
 var char_pronouns: int = 0
+var house_num: int = 0
 @export var menu_name = "demoMap"
 @export var switch_to: String
 signal menu_changed(menu_name)
@@ -32,10 +33,11 @@ func load_islanders():
 			print("Islanders loaded :3")
 		file.close()
 
-func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pronouns: int):
+func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pronouns: int, new_house_num: int):
 	menu_params = new_menu_params
 	char_name = new_char_name
 	char_pronouns = new_char_pronouns
+	house_num = new_house_num
 
 	#Global.islanders.append({"name": char_name, "pronouns": char_pronouns, "appearance": menu_params})
 	print("Islander added:", Global.islanders)
