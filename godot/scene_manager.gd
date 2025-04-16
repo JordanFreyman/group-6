@@ -18,6 +18,7 @@ func load_demo_map():
 	var demo_instance = demo_scene.instantiate()
 	add_child(demo_instance)
 	current_menu = demo_instance
+	current_menu.connect("menu_changed", handle_menu_changed)
 
 func load_character_creator():
 	current_menu = $Character
@@ -40,5 +41,32 @@ func handle_menu_changed(current_menu_name: String):
 	
 
 func transfer_data_between_scenes(old_scene, new_scene):
-	#new_scene.currEyes = old_scene.currEyes
-	new_scene.load_params(old_scene.menu_params, old_scene.char_name, old_scene.char_pronouns, old_scene.house_num)
+	if new_scene.has_method("load_params"):
+		var default_menu_params := {
+			"currHead": 0,
+			"currShirt": 0,
+			"currPants": 0,
+			"currEyebrows": 0,
+			"currEyes": 0,
+			"currHair": 0,
+			"currNose": 0,
+			"currMouth": 0
+		}
+
+		var temp_params = old_scene.get("menu_params") if old_scene.has_method("get") else null
+		var final_menu_params = temp_params if typeof(temp_params) == TYPE_DICTIONARY else default_menu_params
+
+		for key in default_menu_params.keys():
+			if not final_menu_params.has(key):
+				final_menu_params[key] = default_menu_params[key]
+
+		var char_name = old_scene.get("char_name") if old_scene.has_method("get") else ""
+		var char_pronouns = old_scene.get("char_pronouns") if old_scene.has_method("get") else 0
+		var house_num = old_scene.get("house_num") if old_scene.has_method("get") else 1
+
+		new_scene.load_params(
+			final_menu_params,
+			char_name,
+			char_pronouns,
+			house_num
+		)

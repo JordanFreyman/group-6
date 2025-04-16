@@ -3,11 +3,12 @@ extends Node2D
 var project_dir = "C:/Users/jfrey/Documents/GitHub/group-6/godot"  # Set your actual project path
 var interpreter_path = project_dir.path_join("venv/Scripts/python.exe")
 var script_path = project_dir.path_join("islander.py")
+var is_ready = false
+var has_loaded = false
 
 
 signal menu_changed(menu_name)
-
-@onready var headSprite = $CompositeSprites/Head
+var headSprite
 @onready var shirtSprite = $CompositeSprites/Shirt
 @onready var pantsSprite = $CompositeSprites/Pants
 @onready var eyebrowsSprite = $CompositeSprites/Eyebrows
@@ -38,14 +39,26 @@ var pronouns = {
 	2: ["they", "them", "their", "theirs", "themselves"]
 }
 var house_num : int
-
 func load_params(new_menu_params: Dictionary, new_char_name: String, new_char_pronouns: int, new_house_num: int):
 	menu_params = new_menu_params
 	char_name = new_char_name
 	char_pronouns = new_char_pronouns
 	house_num = new_house_num
+	has_loaded = true
+	try_update_sprites()
+func try_update_sprites():
+	if is_ready and has_loaded:
+		print("✅ Conditions met! Updating sprites.")
+		update_sprites()
+	else:
+		print("⏳ Waiting... is_ready =", is_ready, ", has_loaded =", has_loaded)
+
 
 func _ready():
+	headSprite = $CompositeSprites/Head
+	is_ready = true
+	try_update_sprites()
+	
 	Global.load_islanders()
 	Music.play_music("res://Music/chicken dance song.mp3")
 	print("Python Interpreter Path:", interpreter_path)
@@ -60,7 +73,7 @@ func _ready():
 	else:
 		var num_list = []
 		for i in range(Global.islanders.size()):
-			num_list.append(Global.islanders[i][house_num])
+			num_list.append(Global.islanders[i]["house_num"])
 		var found = false
 		while not found:
 			house_num = randi_range(1, 11)
@@ -71,7 +84,7 @@ func _ready():
 		interpreter_path = ProjectSettings.globalize_path("res://venv/Scripts/python.exe")
 		script_path = ProjectSettings.globalize_path("res://islander.py")
 	notify("title", "subtitle", "body")
-	update_sprites()
+	#update_sprites()
 	if "height_scale" in menu_params:
 		shirtSprite.scale.y = menu_params["height_scale"]
 		shirtSprite.position.y = menu_params["shirt_y"]
@@ -94,7 +107,12 @@ func notify(title = "", subtitle = "", body = ""):
 
 # Function to update all sprite textures based on menu_params
 func update_sprites():
-	headSprite.texture = $CompositeSprites.head_spritesheet[menu_params["currHead"]]
+	if headSprite == null:
+		print("🚨 headSprite is still null in update_sprites()")
+		return
+	print("✅ headSprite is ready:", headSprite)
+	headSprite.texture = $CompositeSprites.head_spritesheet.get(menu_params.get("currHead", 0), preload("res://Art/pixil-layer-head.png"))
+	headSprite.texture = $CompositeSprites.head_spritesheet.get(menu_params.get("currHead", 0), preload("res://Art/pixil-layer-head.png"))
 	shirtSprite.texture = $CompositeSprites.shirt_spritesheet[menu_params["currShirt"]]
 	pantsSprite.texture = $CompositeSprites.pants_spritesheet[menu_params["currPants"]]
 	eyebrowsSprite.texture = $CompositeSprites.eyebrows_spritesheet[menu_params["currEyebrows"]]

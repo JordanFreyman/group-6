@@ -44,8 +44,6 @@ func delete_save_file():
 		print("No save file to delete")
 
 
-func _on_delete_pressed() -> void:
-	delete_save_file()
 
 
 func _on_create_pressed() -> void:

@@ -1,6 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://diphbdip1rlp8"]
+[gd_scene load_steps=3 format=3 uid="uid://diphbdip1rlp8"]
 
 [ext_resource type="Script" path="res://town_hall.gd" id="1_4h3ao"]
+[ext_resource type="Texture2D" uid="uid://b8uwbblpo8odt" path="res://Themes/background.jpg" id="2_jroki"]
 
 [node name="Town-hall" type="Node2D"]
 script = ExtResource("1_4h3ao")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1934.0
+offset_bottom = 1078.0
+texture = ExtResource("2_jroki")
+
+[node name="back" type="Button" parent="."]
+offset_left = 100.0
+offset_top = 871.0
+offset_right = 280.0
+offset_bottom = 985.0
+text = "Back"
+
+[node name="create new" type="Button" parent="."]
+offset_left = 279.0
+offset_top = 195.0
+offset_right = 650.0
+offset_bottom = 421.0
+text = "create
+new
+character"
+
+[node name="delete" type="Button" parent="."]
+offset_left = 1025.0
+offset_top = 186.0
+offset_right = 1373.0
+offset_bottom = 392.0
+text = "delete
+save
+file"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="create new" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="delete" to="." method="_on_delete_pressed"]
