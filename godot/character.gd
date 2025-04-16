@@ -27,7 +27,7 @@ var menu_params := {
 	"currMouth": 0
 }
 
-@export var menu_name = "menu"
+@export var menu_name = "character"
 @export var switch_to: String
 
 var char_name : String
@@ -351,19 +351,19 @@ func _on_done2_pressed() -> void:
 			var islander_data = json_instance.data
 			Global.islanders.append(islander_data)
 			
-			var demo_map_scene = load("res://demoMap.tscn").instantiate()
-			get_tree().root.add_child(demo_map_scene)
-			
-			if "menu_params" in islander_data and "char_name" in islander_data and "char_pronouns" in islander_data and "house_num" in islander_data:
-				char_pronouns = int(char_pronouns)
-				demo_map_scene.load_params(
-					islander_data["menu_params"],
-					islander_data["char_name"],
-					int(islander_data["char_pronouns"]),
-					int(islander_data["house_num"])
-				)
-			else:
-				print("missing keys in islander_data: ", islander_data)
+			# Save extracted values to this scene's variables
+			if "menu_params" in islander_data:
+				menu_params = islander_data["menu_params"]
+			if "char_name" in islander_data:
+				char_name = islander_data["char_name"]
+			if "char_pronouns" in islander_data:
+				char_pronouns = int(islander_data["char_pronouns"])
+			if "house_num" in islander_data:
+				house_num = int(islander_data["house_num"])
+
+			switch_to = "demoMap"
+			emit_signal("menu_changed", menu_name)
+
 		else:
 			print("JSON parse error: ", json_instance.get_error_message())
 	else:

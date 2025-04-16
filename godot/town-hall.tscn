@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://diphbdip1rlp8"]
+[gd_scene load_steps=2 format=3 uid="uid://diphbdip1rlp8"]
+
+[ext_resource type="Script" path="res://town_hall.gd" id="1_4h3ao"]
 
 [node name="Town-hall" type="Node2D"]
+script = ExtResource("1_4h3ao")

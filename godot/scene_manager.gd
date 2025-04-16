@@ -24,6 +24,7 @@ func load_character_creator():
 	current_menu.connect("menu_changed", handle_menu_changed)
 
 func handle_menu_changed(current_menu_name: String):
+	print("Switching from:", current_menu_name)  
 	var next_menu_name = current_menu.switch_to
 	var temp = load("res://"+next_menu_name+".tscn")
 	next_menu = temp.instantiate()
@@ -35,6 +36,7 @@ func handle_menu_changed(current_menu_name: String):
 	current_menu.queue_free()
 	current_menu = next_menu
 	next_menu = null
+	print("Switching to:", next_menu_name)       
 	
 
 func transfer_data_between_scenes(old_scene, new_scene):

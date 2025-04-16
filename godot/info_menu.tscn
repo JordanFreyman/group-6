@@ -21,7 +21,6 @@ shader = ExtResource("2_k8tmn")
 position = Vector2(19, -153)
 scale = Vector2(2, 2)
 script = ExtResource("1_be1li")
-menu_name = "character"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_repeat = 2

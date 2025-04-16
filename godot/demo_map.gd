@@ -61,10 +61,12 @@ func _on_food_2_pressed() -> void:
 	switch_scene("res://Scense/MiniGames/FeedMe.tscn")
 
 func _on_town_hall_2_pressed() -> void:
-	switch_scene("res://town-hall.tscn")
+	switch_to = "town-hall"  # No .tscn, scene_manager.gd adds it
+	emit_signal("menu_changed", menu_name)
 
 func _on_homes_2_pressed() -> void:
-	switch_scene("res://homes.tscn")
+	switch_to = "homes"
+	emit_signal("menu_changed", menu_name)
 	#switch_to = "homes"
 	#emit_signal("menu_changed", menu_name)
 
