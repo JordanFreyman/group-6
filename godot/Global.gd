@@ -1,5 +1,6 @@
 extends Node
 
+var intro_shown := false
 var islanders: Array = []  # Global list to store all islanders
 func save_islanders():
 	var save_data = {
